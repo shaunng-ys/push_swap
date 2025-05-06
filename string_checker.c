@@ -17,36 +17,59 @@ size_t	string_checker(char *s)
 	size_t	i;
 	size_t	j;
 	size_t	signal0;
-	size_t	signal1;
+	size_t	counter;
 	char	**d_array;
 	long	temp;
 
 	i = 0;
 	j = 0;
 	signal0 = 0;
-	signal1 = 0;
+	counter = 0;
 	temp = 0;
+	/*
+	The immediate while loop below is to check for non-integer characters
+	& non-whitespace characters
+	*/
 	while (s[i])
 	{
-		if ((s[i] >= '0' || s[i] <= '9') || s[i] == '+' || s[i] == '-')
-			signal0 = 1;
+		if ((s[i] >= '0' && s[i] <= '9') || (s[i] == '+' || s[i] == '-'))
+			signal = 0;
+		/*
+		The condition below means that signal0 is set as 0
+		if the character is a whitespace character
+		*/
 		else if (ft_isspace(s[i]) == 1)
-			signal0 = 1;
+			signal = 0;
 		else
-			signal0 = 0;
+			return (1);
 	   	i++;
 	}
+	/*
+	A double array is supposed to be created below, and is supposed to comprise
+	of strings of integer values
+	*/
 	d_array = ft_split(s, ' ');
 	i = 0;
+	/*
+	The immediate while loop below is supposed to check each string 
+	for non-integer values and also repeat integer values
+	*/
 	while (d_array[i] != NULL)
 	{
 		temp = ft_atol(d_array[i]);
 		if (temp > 2147483647 || temp < -2147483648)
-			signal1 = 0;
-		while (d_array[j] != NULL & )
+			return (1);
+		while (d_array[j] != NULL && counter <= 1)
 		{
-			if (temp )
+			if (d_array[j++] == temp)
+				counter++;
 		}
+		if (counter > 1)
+			return (1);
+		else if (counter == 1)
+			counter = 0;
+		j = 0;
 		i++;
 	}
+	return (0);
 }
