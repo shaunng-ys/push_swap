@@ -34,10 +34,6 @@ size_t	string_checker(char *s)
 	{
 		if ((s[i] >= '0' && s[i] <= '9') || (s[i] == '+' || s[i] == '-'))
 			signal = 0;
-		/*
-		The condition below means that signal0 is set as 0
-		if the character is a whitespace character
-		*/
 		else if (ft_isspace(s[i]) == 1)
 			signal = 0;
 		else
@@ -56,6 +52,16 @@ size_t	string_checker(char *s)
 	*/
 	while (d_array[i] != NULL)
 	{
+		/*
+		The while loop below checks each string for multiple or misplaced '+' & '-'
+		*/
+		while (d_array[i][j])
+		{
+			if ((d_array[i][j] == '+' || d_array[i][j] == '-') && j != 0)
+				return (1);
+			j++;
+		}
+		j = 0;
 		temp = ft_atol(d_array[i]);
 		if (temp > 2147483647 || temp < -2147483648)
 			return (1);
