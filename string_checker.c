@@ -30,7 +30,7 @@ size_t	string_checker(char *s)
 	The immediate while loop below is to check for non-integer characters
 	& non-whitespace characters
 	*/
-	while (s[i])
+	while (s[i] && signal0 == 0)
 	{
 		if ((s[i] >= '0' && s[i] <= '9') || (s[i] == '+' || s[i] == '-'))
 			signal0 = 0;

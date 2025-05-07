@@ -42,7 +42,10 @@ int	main(int argc, char **argv)
 				return (1);
 			}
 			else
+			{
+				//placeholder for add_to_stack function
 				printf("This string is okay!\n");
+			}
 			args--;
 			i++;
 		}
