@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft/libft.h"
 
 size_t	string_checker(char *s)
 {
@@ -33,9 +33,9 @@ size_t	string_checker(char *s)
 	while (s[i])
 	{
 		if ((s[i] >= '0' && s[i] <= '9') || (s[i] == '+' || s[i] == '-'))
-			signal = 0;
+			signal0 = 0;
 		else if (ft_isspace(s[i]) == 1)
-			signal = 0;
+			signal0 = 0;
 		else
 			return (1);
 	   	i++;
@@ -67,7 +67,7 @@ size_t	string_checker(char *s)
 			return (1);
 		while (d_array[j] != NULL && counter <= 1)
 		{
-			if (d_array[j++] == temp)
+			if (ft_atol(d_array[j++]) == temp)
 				counter++;
 		}
 		if (counter > 1)

@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft/libft.h"
+
+size_t	string_checker(char *s);
 
 int	main(int argc, char **argv)
 {
@@ -20,14 +22,14 @@ int	main(int argc, char **argv)
 	args = argc;
 	i = 1;
 	if (argc == 1)
-		ft_putstr("Error\n", 1);
+		ft_putstr_fd("Error\n", 1);
 	else
 	{
 		/*
 		The while loop immediately below is meant to check whether strings
 		are valid and if so add them to the stack, else print "Error\n"
 		*/
-		while (args)
+		while (args != 1)
 		{
 			/*
 			How can I handle mixed inputs
@@ -36,9 +38,11 @@ int	main(int argc, char **argv)
 			*/
 			if (string_checker(argv[i]) == 1)
 			{
-				ft_putstr("Error\n", 1);
+				ft_putstr_fd("Error\n", 1);
 				return (1);
 			}
+			else
+				printf("This string is okay!\n");
 			args--;
 			i++;
 		}
