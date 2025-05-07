@@ -19,7 +19,7 @@ int	main(int argc, char **argv)
 	int	args;
 	size_t	i;
 
-	args = argc;
+	args = argc - 1;
 	i = 1;
 	if (argc == 1)
 		ft_putstr_fd("Error\n", 1);
@@ -29,7 +29,7 @@ int	main(int argc, char **argv)
 		The while loop immediately below is meant to check whether strings
 		are valid and if so add them to the stack, else print "Error\n"
 		*/
-		while (args != 1)
+		while (args)
 		{
 			/*
 			How can I handle mixed inputs
