@@ -12,4 +12,20 @@
 
 #include "libft/libft.a"
 
+struct	node
+{
+	int data;
+	struct node *previous;
+	struct node *next;
+};
 
+Node*	addNode (Node *current, int value)
+{
+	Node *newNode = (Node*)malloc(sizeof(Node));
+	if (newNode == NULL)
+		return (0);
+	newNode->data = value;
+	newNode->previous = current;
+	newNode->next = NULL;
+	return (newNode);
+}

@@ -18,9 +18,12 @@ int	main(int argc, char **argv)
 {
 	int	args;
 	size_t	i;
+	size_t	j;
+	char	**strings;
 
 	args = argc - 1;
 	i = 1;
+	j = 0;
 	if (argc == 1)
 		ft_putstr_fd("Error\n", 1);
 	else
@@ -44,6 +47,13 @@ int	main(int argc, char **argv)
 			else
 			{
 				//placeholder for add_to_stack function
+				strings = ft_split(argv[i]);
+				while (strings[j])
+				{
+					if ()
+					addNode(, ft_atoi(strings[j]));
+					j++;
+				}
 				printf("This string is okay!\n");
 			}
 			args--;
