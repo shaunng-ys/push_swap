@@ -41,7 +41,12 @@ void	sb(t_linkedlist *b)
 {
 	sa(b);
 }
-//ss : sa and sb at the same time. 
+//ss : sa and sb at the same time.
+void	ss(t_linkedlist *a, t_linkedlist *b)
+{
+	sa(a);
+	sa(b);
+}
 
 //pa (push a): If b is not empty it takes the first element on top of b and puts it on a.
 int	pa(t_linkedlist *a, t_linkedlist *b)
@@ -85,11 +90,37 @@ int	pb(t_linkedlist *a, t_linkedlist *b)
 // 	pa(b);
 // }
 
-// ra (rotate a): Shifts all the elements of the stack a up by one position. The first element becomes the last. 
+// ra (rotate a): Shifts all the elements of the stack a up by one position. The first element becomes the last.
+void	ra(t_linkedlist *a)
+{
+	t_node	*first_node;
+	t_node	*second_node;
+	t_node	*current;
+	
+	first_node = a->head;
+	second_node = first_node->next;
+	a->head = second_node;
+	first_node->next = NULL;
+	current = a->head;
+	while (current->next != NULL)
+	{
+		current = current->next;
+	}
+	current->next = first_node;
+}
 
 // rb (rotate b) : Shifts all the elements of the stack b one position upwards. The first element becomes the last one. 
+void	rb(t_linkedlist *b)
+{
+	ra(b);
+}
 
 // rr : ra and rb at the same time. 
+void	rr(t_linkedlist *a, t_linkedlist *b)
+{
+	ra(a);
+	ra(b);
+}
 
 // rra (reverse rotate a): Shifts all elements of the stack down one position. the stack a. The last element becomes the first. 
 
