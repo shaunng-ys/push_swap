@@ -11,34 +11,35 @@
 /* ************************************************************************** */
 
 #include "libft/libft.h"
-
-size_t	string_checker(char *s);
+#include "push_swap.h"
 
 int	main(int argc, char **argv)
 {
-	int	args;
-	size_t	i;
-	size_t	j;
-	char	**strings;
+	int				args;
+	size_t			i;
+	size_t			j;
+	char			**strings;
+	int				integer;
+	t_linkedlist	*stack_a;
+	t_linkedlist	*stack_b;
+	t_node			*current;
+	t_node			*current_b;
 
 	args = argc - 1;
+	//printf("This is args: %d!\n", args);
 	i = 1;
 	j = 0;
+	integer = 500;
+	stack_a = createlinkedlist();
+	stack_b = createlinkedlist();
+	//Condition being true means there aren't any strings
 	if (argc == 1)
 		ft_putstr_fd("Error\n", 1);
 	else
 	{
-		/*
-		The while loop immediately below is meant to check whether strings
-		are valid and if so add them to the stack, else print "Error\n"
-		*/
 		while (args)
 		{
-			/*
-			How can I handle mixed inputs
-			(multiple and varying length strings):
-			./push_swap "1 2 4 3" 76 90 "348 05
-			*/
+			//printf("I've entered the while (args) loop!\n");
 			if (string_checker(argv[i]) == 1)
 			{
 				ft_putstr_fd("Error\n", 1);
@@ -46,19 +47,56 @@ int	main(int argc, char **argv)
 			}
 			else
 			{
-				//placeholder for add_to_stack function
-				strings = ft_split(argv[i]);
+				//printf("Current string: %s\n", argv[i]);
+				strings = ft_split(argv[i], ' ');
 				while (strings[j])
 				{
-					if ()
-					addNode(, ft_atoi(strings[j]));
+					//printf("Current string: %s\n", strings[j]);
+					append(stack_a, ft_atoi(strings[j]));
+					append(stack_b, integer++);
+					//display_last(list);
 					j++;
 				}
-				printf("This string is okay!\n");
+				printf("This string is okay for sure!\n");
 			}
+			j = 0;
 			args--;
 			i++;
 		}
-
+	}
+	current = stack_a->head;
+	while (current != NULL)
+	{
+		printf("%d ", current->data);
+		current = current->next;
+	}
+	printf("\n");
+	current_b = stack_b->head;
+	while (current_b != NULL)
+	{
+		printf("%d ", current_b->data);
+		current_b = current_b->next;
+	}
+	printf("Total size of linkedlist: %d\n", stack_a->size);
+	if (num_order_check(stack_a) == 1)
+	{
+		printf("Linkedlist is not yet sorted\n");
+	}
+	else
+		printf("Linkedlist is sorted\n");
+	// sa(stack_a);
+	pa(stack_a, stack_b);
+	current = stack_a->head;
+	while (current != NULL)
+	{
+		printf("%d ", current->data);
+		current = current->next;
+	}
+	printf("\n");
+	current_b = stack_b->head;
+	while (current_b != NULL)
+	{
+		printf("%d ", current_b->data);
+		current_b = current_b->next;
 	}
 }
