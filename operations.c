@@ -123,7 +123,35 @@ void	rr(t_linkedlist *a, t_linkedlist *b)
 }
 
 // rra (reverse rotate a): Shifts all elements of the stack down one position. the stack a. The last element becomes the first. 
+void	rra(t_linkedlist *a)
+{
+	t_node	*last_node;
+	t_node	*second_last_node;
+	t_node	*first_node;
+	t_node	*current;
+
+	first_node = a->head;
+	current = a->head;
+	while (current->next->next != NULL)
+	{
+		current = current->next;
+	}
+	second_last_node = current;
+	last_node = current->next;
+	second_last_node->next = NULL;
+	a->head = last_node;
+	a->head->next = first_node;
+}
 
 // rrb (reverse rotate b): Shifts all the elements of the stack b one position downwards. the stack b. The last element becomes the first. 
+void	rrb(t_linkedlist *b)
+{
+	rra(b);
+}
 
 // rrr : rra and rrb at the same time
+void	rrr(t_linkedlist *a, t_linkedlist *b)
+{
+	rra(a);
+	rra(b);
+}

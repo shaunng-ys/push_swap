@@ -43,5 +43,8 @@ int				pb(t_linkedlist *a, t_linkedlist *b);
 void			ra(t_linkedlist *a);
 void			rb(t_linkedlist *b);
 void			rr(t_linkedlist *a, t_linkedlist *b);
+void			rra(t_linkedlist *a);
+void			rrb(t_linkedlist *b);
+void			rrr(t_linkedlist *a, t_linkedlist *b);
 
 #endif

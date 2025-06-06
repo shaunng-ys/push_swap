@@ -86,7 +86,9 @@ int	main(int argc, char **argv)
 		printf("Linkedlist is sorted\n");
 	// sa(stack_a);
 	//pa(stack_a, stack_b);
-	rr(stack_a, stack_b);
+	//rr(stack_a, stack_b);
+	//rra(stack_a);
+	rrr(stack_a, stack_b);
 	current = stack_a->head;
 	while (current != NULL)
 	{
