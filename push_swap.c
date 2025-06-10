@@ -63,6 +63,7 @@ int	main(int argc, char **argv)
 			args--;
 			i++;
 		}
+		printf("Size of stack_a: %d, Size of stack_b: %d\n", stack_a->size, stack_b->size);
 	}
 	current_a = stack_a->head;
 	while (current_a != NULL)
@@ -95,7 +96,7 @@ int	main(int argc, char **argv)
 		printf("%d, %zu\n", current_a->data, current_a->original_pos);
 		current_a = current_a->next;
 	}
-	printf("\nLine break\n");
+	printf("\nLine break\n\n");
 	current_b = stack_b->head;
 	while (current_b != NULL)
 	{

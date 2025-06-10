@@ -49,7 +49,12 @@ int	num_order_check(t_linkedlist *list)
 
 void	sort_small_stack(t_linkedlist list)
 {
-	
+	/*
+	For the sort_small_stack algorithm (for 5 integers and below, if there are 5 then push the
+	2 smallest integers over to stack b, push the smallest, then push the smallest after the
+	1st push), afterwards, the remaining 3 integers have a very limited number of combinations
+	so they can be hard coded
+	*/
 }
 
 void	sort_big_stack(t_linkedlist list)
