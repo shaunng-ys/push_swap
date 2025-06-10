@@ -22,7 +22,7 @@ int	main(int argc, char **argv)
 	int				integer;
 	t_linkedlist	*stack_a;
 	t_linkedlist	*stack_b;
-	t_node			*current;
+	t_node			*current_a;
 	t_node			*current_b;
 
 	args = argc - 1;
@@ -64,17 +64,17 @@ int	main(int argc, char **argv)
 			i++;
 		}
 	}
-	current = stack_a->head;
-	while (current != NULL)
+	current_a = stack_a->head;
+	while (current_a != NULL)
 	{
-		printf("%d ", current->data);
-		current = current->next;
+		printf("%d, %zu\n", current_a->data, current_a->original_pos);
+		current_a = current_a->next;
 	}
 	printf("\n");
 	current_b = stack_b->head;
 	while (current_b != NULL)
 	{
-		printf("%d ", current_b->data);
+		printf("%d, %zu\n", current_b->data, current_b->original_pos);
 		current_b = current_b->next;
 	}
 	printf("Total size of linkedlist: %d\n", stack_a->size);
@@ -84,22 +84,22 @@ int	main(int argc, char **argv)
 	}
 	else
 		printf("Linkedlist is sorted\n");
-	// sa(stack_a);
-	//pa(stack_a, stack_b);
-	//rr(stack_a, stack_b);
-	//rra(stack_a);
+	//sa(stack_a);
+	// pa(stack_a, stack_b);
+	// rr(stack_a, stack_b);
+	// rra(stack_a);
 	rrr(stack_a, stack_b);
-	current = stack_a->head;
-	while (current != NULL)
+	current_a = stack_a->head;
+	while (current_a != NULL)
 	{
-		printf("%d ", current->data);
-		current = current->next;
+		printf("%d, %zu\n", current_a->data, current_a->original_pos);
+		current_a = current_a->next;
 	}
-	printf("\n");
+	printf("\nLine break\n");
 	current_b = stack_b->head;
 	while (current_b != NULL)
 	{
-		printf("%d ", current_b->data);
+		printf("%d, %zu\n", current_b->data, current_b->original_pos);
 		current_b = current_b->next;
 	}
 }

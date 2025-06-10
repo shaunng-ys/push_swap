@@ -49,10 +49,10 @@ int	num_order_check(t_linkedlist *list)
 
 void	sort_small_stack(t_linkedlist list)
 {
-
+	
 }
 
 void	sort_big_stack(t_linkedlist list)
 {
-	
+
 }

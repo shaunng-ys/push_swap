@@ -87,20 +87,26 @@ void	append(t_linkedlist *list, int data)
 {
 	t_node			*newnode;
 	t_node			*current;
+	unsigned int	position;
 
 	newnode = createnode(data);
 	current = list->head;
 	if (list->head == NULL)
+	{
 	/*
 	I think I should be able to use a different condition here
 	as well: if (list->size = 0), not important, just a thought hehe
 	*/
 		list->head = newnode;
+		newnode->original_pos = 1;
+	}
 	else
 	{
 		while (current->next != NULL)
 			current = current->next;
 		current->next = newnode;
+		position = current->original_pos + 1;
+		current->next->original_pos = position;
 	}
 	list->size = list->size + 1;
 }
