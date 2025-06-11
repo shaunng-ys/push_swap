@@ -47,8 +47,56 @@ int	num_order_check(t_linkedlist *list)
 	return (0);
 }
 
-void	sort_small_stack(t_linkedlist list)
+void	push_smallest(t_linkedlist *a, t_linkedlist *b, t_node *smallest)
 {
+	t_node	*smallest;
+	t_node	*current;
+	int		counter;
+
+	counter = 1;
+	current = a->head;
+	while (current != NULL && current != smallest)
+	{
+		current = current->next;
+		counter++;
+	}
+	if (counter = 1)
+		pb(a, b);
+	else if (counter = 2)
+		sa(a);
+	else if (counter = 3)
+	{	ra(a);
+		ra(a);
+	}
+	else if (counter = 4)
+	{
+		rra(a);
+		rra(a);
+	}
+	else if (counter = 5)
+		rra(a);
+	pb(a, b);
+}
+
+void	sort_small_stack(t_linkedlist *list)
+{
+	t_node	*current;
+	t_node	*smallest;
+	int		smallest_num;
+
+	current = list->head;
+	smallest_num = current->data;
+	while (current != NULL)
+	{
+		if (smallest_num > current->data)
+		{
+			smallest_num = current->data;
+			smallest = current;
+		}
+		current = current->next;
+	}
+
+	while ()
 	/*
 	For the sort_small_stack algorithm (for 5 integers and below, if there are 5 then push the
 	2 smallest integers over to stack b, push the smallest, then push the smallest after the
