@@ -55,6 +55,7 @@ void	push_smallest(t_linkedlist *a, t_linkedlist *b, t_node *smallest)
 
 	counter = 1;
 	current = a->head;
+	find_smallest(a);
 	while (current != NULL && current != smallest)
 	{
 		current = current->next;
@@ -78,13 +79,13 @@ void	push_smallest(t_linkedlist *a, t_linkedlist *b, t_node *smallest)
 	pb(a, b);
 }
 
-void	sort_small_stack(t_linkedlist *list)
+t_node	*find_smallest(t_linkedlist *a)
 {
 	t_node	*current;
 	t_node	*smallest;
 	int		smallest_num;
 
-	current = list->head;
+	current = a->head;
 	smallest_num = current->data;
 	while (current != NULL)
 	{
@@ -95,8 +96,88 @@ void	sort_small_stack(t_linkedlist *list)
 		}
 		current = current->next;
 	}
+	return (smallest);
+}
 
-	while ()
+t_node	*find_largest(t_linkedlist *a)
+{
+	t_node	*current;
+	t_node	*largest;
+	int		largest_num;
+
+	current = a->head;
+	largest_num = current->data;
+	while (current != NULL)
+	{
+		if (largest_num < current->data)
+		{
+			largest_num = current->data;
+			largest = current;
+		}
+		current = current->next;
+	}
+	return (largest);
+}
+
+void	sort_3(t_linkedlist *a)
+{
+	t_node	*current;
+	t_node	*smallest;
+	t_node	*largest;
+
+	current = a->head;
+	// {1, 3, 2}
+	if (current == smallest && current->next == largest)
+	{
+		rra(a);
+		sa(a);
+	}
+	// In the instance below, the stack of 3 is already sorted so I just have to push the ints in b back to a 
+	// {1, 2, 3}
+	// else if (current == smallest && current->next != largest)
+	// {
+	// }
+	
+	// {3, 1, 2}
+	else if (current == largest && current->next == smallest)
+		ra(a);
+	// {3, 2, 1}
+	else if (current == largest && current->next != smallest)
+	{
+		ra(a);
+		sa(a);
+	}
+	// {2, 3, 1}
+	else if (current->next == largest)
+		rra(a);
+	// {2, 1, 3}
+	else if (current->next == smallest)
+		sa(a);
+}
+
+void	sort_small_stack(t_linkedlist *a, t_linkedlist *b, t_node *smallest)
+{
+	if (a->size == 5)
+	{
+		//find_smallest(a);
+		push_smallest(a, b, smallest);
+		//find_smallest(a);
+		push_smallest(a, b, smallest);
+		sort_3(a);
+		pa(a, b);
+		pa(a, b);
+	}
+	else if (a->size == 4)
+	{
+		//find_smallest(a);
+		push_smallest(a, b, smallest);
+		sort_3(a);
+		pa(a, b);
+	}
+	else if (a->size == 3)
+		sort_3(a);
+	else if (a->size == 2)
+		sa(a);
 	/*
 	For the sort_small_stack algorithm (for 5 integers and below, if there are 5 then push the
 	2 smallest integers over to stack b, push the smallest, then push the smallest after the
