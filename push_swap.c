@@ -53,7 +53,7 @@ int	main(int argc, char **argv)
 				{
 					//printf("Current string: %s\n", strings[j]);
 					append(stack_a, ft_atoi(strings[j]));
-					append(stack_b, integer++);
+					//append(stack_b, integer++);
 					//display_last(list);
 					j++;
 				}
@@ -72,13 +72,13 @@ int	main(int argc, char **argv)
 		current_a = current_a->next;
 	}
 	printf("\n");
-	current_b = stack_b->head;
-	while (current_b != NULL)
-	{
-		printf("%d, %zu\n", current_b->data, current_b->original_pos);
-		current_b = current_b->next;
-	}
-	printf("Total size of linkedlist: %d\n", stack_a->size);
+	// current_b = stack_b->head;
+	// while (current_b != NULL)
+	// {
+	// 	printf("%d, %zu\n", current_b->data, current_b->original_pos);
+	// 	current_b = current_b->next;
+	// }
+	// printf("Total size of linkedlist: %d\n", stack_a->size);
 	if (num_order_check(stack_a) == 1)
 	{
 		printf("Linkedlist is not yet sorted\n");
@@ -89,7 +89,11 @@ int	main(int argc, char **argv)
 	// pa(stack_a, stack_b);
 	// rr(stack_a, stack_b);
 	// rra(stack_a);
-	rrr(stack_a, stack_b);
+	// rrr(stack_a, stack_b);
+	if (stack_a->size <= 5)
+	{
+		sort_small_stack(stack_a, stack_b);
+	}
 	current_a = stack_a->head;
 	while (current_a != NULL)
 	{
