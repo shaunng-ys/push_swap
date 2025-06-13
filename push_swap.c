@@ -57,21 +57,24 @@ int	main(int argc, char **argv)
 					//display_last(list);
 					j++;
 				}
-				printf("This string is okay for sure!\n");
+				//printf("This string is okay for sure!\n");
 			}
 			j = 0;
 			args--;
 			i++;
 		}
-		printf("Size of stack_a: %d, Size of stack_b: %d\n", stack_a->size, stack_b->size);
+		printf("Size of stack_a: %d, Size of stack_b: %d\n\n", stack_a->size, stack_b->size);
 	}
-	current_a = stack_a->head;
-	while (current_a != NULL)
-	{
-		printf("%d, %zu\n", current_a->data, current_a->original_pos);
-		current_a = current_a->next;
-	}
-	printf("\n");
+	printf("These are the integers in stack a:\n");
+	display_list(stack_a);
+	// current_a = stack_a->head;
+	// while (current_a != NULL)
+	// {
+	// 	// printf("%d, %zu\n", current_a->data, current_a->original_pos);
+	// 	printf("%d\n", current_a->data);
+	// 	current_a = current_a->next;
+	// }
+	//printf("\n");
 	// current_b = stack_b->head;
 	// while (current_b != NULL)
 	// {
@@ -81,10 +84,10 @@ int	main(int argc, char **argv)
 	// printf("Total size of linkedlist: %d\n", stack_a->size);
 	if (num_order_check(stack_a) == 1)
 	{
-		printf("Linkedlist is not yet sorted\n");
+		printf("Hmm...it seems the stack has not been sorted\n\n");
 	}
 	else
-		printf("Linkedlist is sorted\n");
+		printf("Delightful, the stack is already sorted\n\n");
 	//sa(stack_a);
 	// pa(stack_a, stack_b);
 	// rr(stack_a, stack_b);
@@ -94,17 +97,33 @@ int	main(int argc, char **argv)
 	{
 		sort_small_stack(stack_a, stack_b);
 	}
-	current_a = stack_a->head;
-	while (current_a != NULL)
+	printf("We've done some work! Let's check again to see if the stack has been sorted\n\n");
+	display_list(stack_a);
+	// current_a = stack_a->head;
+	// while (current_a != NULL)
+	// {
+	// 	// printf("%d, %zu\n", current_a->data, current_a->original_pos);
+	// 	printf("%d\n", current_a->data);
+	// 	current_a = current_a->next;
+	// }
+	// printf("\nLine break\n\n");
+	// current_b = stack_b->head;
+	// while (current_b != NULL)
+	// {
+	// 	// printf("%d, %zu\n", current_b->data, current_b->original_pos);
+	// 	printf("%d\n", current_b->data);
+	// 	current_b = current_b->next;
+	// }
+	if (num_order_check(stack_a) == 1)
 	{
-		printf("%d, %zu\n", current_a->data, current_a->original_pos);
-		current_a = current_a->next;
+		printf("Hmm, it seems the stack has still not been sorted\n\n");
 	}
-	printf("\nLine break\n\n");
-	current_b = stack_b->head;
-	while (current_b != NULL)
-	{
-		printf("%d, %zu\n", current_b->data, current_b->original_pos);
-		current_b = current_b->next;
-	}
+	else
+		printf("Great! We managed to sort the stack, this calls for celebration!\n\n");
+	// if (num_order_check(stack_a) == 1)
+	// {
+	// 	printf("Linkedlist is not yet sorted\n");
+	// }
+	// else
+	// 	printf("Linkedlist is sorted\n");
 }

@@ -24,7 +24,7 @@ void	display_list(t_linkedlist *list)
 	t_node	*current;
 
 	current = list->head;
-	printf("This is a display of the linkedlist:\n");
+	// printf("This is a display of the linkedlist:\n");
 	while (current->next != NULL)
 	{
 		printf("%d\n", current->data);
@@ -62,7 +62,7 @@ void	push_smallest(t_linkedlist *a, t_linkedlist *b)
 	counter = 1;
 	current = a->head;
 	smallest = find_smallest(a);
-	printf("This is the smallest integer in the linkedlist: %d\n", smallest->data);
+	// printf("This is the smallest integer in the linkedlist: %d\n", smallest->data);
 	while (current != NULL && current != smallest)
 	{
 		current = current->next;
@@ -96,11 +96,15 @@ t_node	*find_smallest(t_linkedlist *a)
 
 	current = a->head;
 	smallest_num = current->data;
+	smallest = current;
+	//printf("This is currently at the top of the list: %d\n", smallest_num);
 	while (current != NULL)
 	{
+		//printf("I've entered the loop\n");
 		if (smallest_num > current->data)
 		{
 			smallest_num = current->data;
+			//printf("This is the updated smallest number: %d\n", smallest_num);
 			smallest = current;
 		}
 		current = current->next;
@@ -116,17 +120,25 @@ t_node	*find_largest(t_linkedlist *a)
 
 	current = a->head;
 	largest_num = current->data;
-	printf("This is currently the top of the list: %d\n", largest_num);
+	largest = current;
+	//printf("This is currently the top of the list: %d\n", largest_num);
 	while (current->next != NULL)
 	{
+		//printf("I've entered the loop\n");
 		if (largest_num < current->data)
 		{
 			largest_num = current->data;
+			//printf("This is the updated largest number: %d\n", largest_num);
 			largest = current;
 		}
 		current = current->next;
 	}
-	
+	if (largest_num < current->data)
+	{
+		largest_num = current->data;
+		largest = current;
+	}
+	//printf("This is the largest number at the end: %d\n", largest->data);
 	return (largest);
 }
 
@@ -140,11 +152,11 @@ void	sort_3(t_linkedlist *a)
 	smallest = find_smallest(a);
 	largest = find_largest(a);
 	// {1, 3, 2}
-	printf("This is the smallest int: %d\n", smallest->data);
-	printf("This is the largest int: %d\n", largest->data);
+	// printf("This is the smallest int: %d\n", smallest->data);
+	// printf("This is the largest int: %d\n", largest->data);
 	if (current == smallest && current->next == largest)
 	{
-		printf("Scenario 1: {1, 3, 2}\n");
+		//printf("Scenario 1: {1, 3, 2}\n");
 		rra(a);
 		sa(a);
 	}
@@ -157,26 +169,26 @@ void	sort_3(t_linkedlist *a)
 	// {3, 1, 2}
 	else if (current == largest && current->next == smallest)
 	{
-		printf("Scenario 2: {3, 1, 2}\n");
+		//printf("Scenario 2: {3, 1, 2}\n");
 		ra(a);
 	}
 	// {3, 2, 1}
 	else if (current == largest && current->next != smallest)
 	{
-		printf("Scenario 3: {3, 2, 1}\n");
+		//printf("Scenario 3: {3, 2, 1}\n");
 		ra(a);
 		sa(a);
 	}
 	// {2, 3, 1}
 	else if (current->next == largest)
 	{
-		printf("Scenario 4: {2, 3, 1}\n");
+		//printf("Scenario 4: {2, 3, 1}\n");
 		rra(a);
 	}
 	// {2, 1, 3}
 	else if (current->next == smallest)
 	{
-		printf("Scenario 5: {2, 1, 3}\n");
+		//printf("Scenario 5: {2, 1, 3}\n");
 		sa(a);
 	}
 }
@@ -186,18 +198,18 @@ void	sort_small_stack(t_linkedlist *a, t_linkedlist *b)
 	if (a->size == 5)
 	{
 		//find_smallest(a);
-		display_list(a);
+		//display_list(a);
 		push_smallest(a, b);
-		display_list(a);
+		//display_list(a);
 		//find_smallest(a);
 		push_smallest(a, b);
-		display_list(a);
+		// display_list(a);
 		sort_3(a);
-		display_list(a);
+		// display_list(a);
 		pa(a, b);
-		display_list(a);
+		// display_list(a);
 		pa(a, b);
-		display_list(a);
+		// display_list(a);
 	}
 	else if (a->size == 4)
 	{
