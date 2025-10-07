@@ -34,7 +34,7 @@ void	labeller(t_linkedlist *list)
 	pos = 1;
 	while (smallest_node != largest_node)
 	{
-		printf("This is the current smallest node: %d\n", smallest_node->data);
+		//printf("This is the current smallest node: %d\n", smallest_node->data);
 		smallest_node = find_smallest(list);
 		smallest_node->order = ++pos;
 	}

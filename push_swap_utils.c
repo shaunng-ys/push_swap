@@ -48,13 +48,15 @@ void	display_list_plus(t_linkedlist *list)
 	// printf("This is a display of the linkedlist:\n");
 	while (current->next != NULL)
 	{
-		printf("%d\n", current->data);
-		printf("%d\n", current->original_pos);
+		printf("Data: %d\n", current->data);
+		printf("Original Pos: %d\n", current->original_pos);
+		printf("Order: %d\n\n", current->order);
 		current = current->next;
 	}
-	printf("%d\n", current->data);
-	printf("%d\n", current->original_pos);
-	printf("\n");
+	printf("Data: %d\n", current->data);
+	printf("Original Pos: %d\n", current->original_pos);
+	printf("Order: %d\n\n", current->order);
+	//printf("\n");
 	//printf("Last element: %d\n", current->data);
 	//printf("This is the last element in the linked list: %d\n", current->data);
 	//ft_putnbr_fd(current->data, 1);
@@ -140,7 +142,7 @@ t_node	*find_smallest(t_linkedlist *a)
 		//printf("I've entered the loop\n");
 		if ((smallest_num > current->data) && (current->check == 0))
 		{
-			printf("Current check value is: %d\n", current->check);
+			//printf("Current check value is: %d\n", current->check);
 			smallest_num = current->data;
 			//printf("This is the updated smallest number: %d\n", smallest_num);
 			smallest = current;
