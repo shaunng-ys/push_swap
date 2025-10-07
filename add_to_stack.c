@@ -58,6 +58,7 @@ t_node	*createnode(int data)
 		exit(1);
 	}
 	newnode->data = data;
+	newnode->check = 0;
 	newnode->next = NULL;
 	return (newnode);
 }

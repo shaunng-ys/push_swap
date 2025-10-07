@@ -17,7 +17,9 @@
 typedef struct s_node
 {
 	int				data;
-	size_t			original_pos;
+	int				check;
+	int				original_pos;
+	int				order;
 	size_t			simple;
 	struct s_node	*next;
 }	t_node;
@@ -36,12 +38,14 @@ size_t			string_checker(char *s);
 void			display_last(t_linkedlist *list);
 //The display_list function is for personal testing purposes only.
 void			display_list(t_linkedlist *list);
+void			display_list_plus(t_linkedlist *list);
 int				num_order_check(t_linkedlist *list);
 t_node			*find_smallest(t_linkedlist *a);
 t_node			*find_largest(t_linkedlist *a);
 void			push_smallest(t_linkedlist *a, t_linkedlist *b);
 void			sort_3(t_linkedlist *a);
 void			sort_small_stack(t_linkedlist *a, t_linkedlist *b);
+void			labeller(t_linkedlist *list);
 void			sa(t_linkedlist *stack_a);
 void			sb(t_linkedlist *b);
 void			ss(t_linkedlist *a, t_linkedlist *b);

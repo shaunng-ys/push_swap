@@ -96,9 +96,14 @@ int	main(int argc, char **argv)
 	if (stack_a->size <= 5)
 	{
 		sort_small_stack(stack_a, stack_b);
+		printf("We've done some work! Let's check again to see if the stack has been sorted\n\n");
+		display_list(stack_a);
 	}
-	printf("We've done some work! Let's check again to see if the stack has been sorted\n\n");
-	display_list(stack_a);
+	if (stack_a->size > 5)
+	{
+		labeller(stack_a);
+		display_list_plus(stack_a);
+	}
 	// current_a = stack_a->head;
 	// while (current_a != NULL)
 	// {

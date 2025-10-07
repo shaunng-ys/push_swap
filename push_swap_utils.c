@@ -39,6 +39,29 @@ void	display_list(t_linkedlist *list)
 	//printf("Last element: %d\n", current->data);
 }
 
+void	display_list_plus(t_linkedlist *list)
+{
+	//printf("I've entered here!\n");
+	t_node	*current;
+
+	current = list->head;
+	// printf("This is a display of the linkedlist:\n");
+	while (current->next != NULL)
+	{
+		printf("%d\n", current->data);
+		printf("%d\n", current->original_pos);
+		current = current->next;
+	}
+	printf("%d\n", current->data);
+	printf("%d\n", current->original_pos);
+	printf("\n");
+	//printf("Last element: %d\n", current->data);
+	//printf("This is the last element in the linked list: %d\n", current->data);
+	//ft_putnbr_fd(current->data, 1);
+	//ft_putchar_fd('\n', 1);
+	//printf("Last element: %d\n", current->data);
+}
+
 int	num_order_check(t_linkedlist *list)
 {
 	t_node	*current;
@@ -88,6 +111,8 @@ void	push_smallest(t_linkedlist *a, t_linkedlist *b)
 	pb(a, b);
 }
 
+
+
 t_node	*find_smallest(t_linkedlist *a)
 {
 	t_node	*current;
@@ -95,20 +120,34 @@ t_node	*find_smallest(t_linkedlist *a)
 	int		smallest_num;
 
 	current = a->head;
+	/*
+	while loop here is necessary in the case where the head node number 
+	is smaller then the remaining smallest numbers(unchecked)
+	i.e. check value is already == 1
+	E.g. sequence: 
+	(check value in parentheses): 6(1) 5(1) 3(1) 2(1) 1(1) 7(0)
+	In this above scenario, the smallest_num given the initial
+	initialisation is 6, and even though it has been checked(1),
+	after going through the while loop, what is returned will still be 6.
+	*/
+	while (current->check == 1)
+		current = current->next;
 	smallest_num = current->data;
 	smallest = current;
 	//printf("This is currently at the top of the list: %d\n", smallest_num);
 	while (current != NULL)
 	{
 		//printf("I've entered the loop\n");
-		if (smallest_num > current->data)
+		if ((smallest_num > current->data) && (current->check == 0))
 		{
+			printf("Current check value is: %d\n", current->check);
 			smallest_num = current->data;
 			//printf("This is the updated smallest number: %d\n", smallest_num);
 			smallest = current;
 		}
 		current = current->next;
 	}
+	smallest->check = 1;
 	return (smallest);
 }
 
@@ -232,5 +271,5 @@ void	sort_small_stack(t_linkedlist *a, t_linkedlist *b)
 
 void	sort_big_stack(t_linkedlist list)
 {
-
+	
 }
