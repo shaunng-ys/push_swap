@@ -20,7 +20,7 @@ typedef struct s_node
 	int				check;
 	int				original_pos;
 	int				order;
-	size_t			simple;
+	char			*simple;
 	struct s_node	*next;
 }	t_node;
 
@@ -46,6 +46,8 @@ void			push_smallest(t_linkedlist *a, t_linkedlist *b);
 void			sort_3(t_linkedlist *a);
 void			sort_small_stack(t_linkedlist *a, t_linkedlist *b);
 void			labeller(t_linkedlist *list);
+void			strrev(char *str);
+char			*fromdeci(char binstr[], int data);
 void			sa(t_linkedlist *stack_a);
 void			sb(t_linkedlist *b);
 void			ss(t_linkedlist *a, t_linkedlist *b);

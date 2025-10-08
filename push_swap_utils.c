@@ -271,6 +271,8 @@ void	sort_small_stack(t_linkedlist *a, t_linkedlist *b)
 	*/
 }
 
+
+
 void	sort_big_stack(t_linkedlist list)
 {
 	

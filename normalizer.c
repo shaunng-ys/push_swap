@@ -39,3 +39,15 @@ void	labeller(t_linkedlist *list)
 		smallest_node->order = ++pos;
 	}
 }
+
+void	simplifier(t_linkedlist *list)
+{
+	t_node	*current;
+
+	current = list->head;
+	while (current != NULL)
+	{
+		
+		current = current->next;
+	}
+}
