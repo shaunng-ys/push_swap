@@ -29,7 +29,38 @@ void	strrev(char *str)
 	}
 }
 
-char	*fromdeci(char binstr[], int data)
+// char	*fromdeci(char *binstr, int data)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	while (data > 0)
+// 	{
+// 		binstr[i++] = (data % 2) + '0';
+// 		data = data / 2;
+// 	}
+// 	binstr[i] = '\0';
+// 	strrev(binstr);
+// 	return (binstr);
+// }
+
+//the function below takes a base 10 number and fills a string with the binary equivalent
+// char	*fromdeci(char *binstr, int data)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	while (data > 0)
+// 	{
+// 		binstr[i++] = (data % 2) + '0';
+// 		data = data / 2;
+// 	}
+// 	binstr[i] = '\0';
+// 	strrev(binstr);
+// 	return (binstr);
+// }
+
+void	fromdeci(char *binstr, int data)
 {
 	int	i;
 
@@ -41,7 +72,6 @@ char	*fromdeci(char binstr[], int data)
 	}
 	binstr[i] = '\0';
 	strrev(binstr);
-	return (binstr);
 }
 // int	main(int argc, char **argv)
 // {

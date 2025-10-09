@@ -102,7 +102,9 @@ int	main(int argc, char **argv)
 	if (stack_a->size > 5)
 	{
 		labeller(stack_a);
+		//simplifier(stack_a);
 		display_list_plus(stack_a);
+		sort_big_stack()
 	}
 	// current_a = stack_a->head;
 	// while (current_a != NULL)

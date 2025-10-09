@@ -50,12 +50,15 @@ void	display_list_plus(t_linkedlist *list)
 	{
 		printf("Data: %d\n", current->data);
 		printf("Original Pos: %d\n", current->original_pos);
-		printf("Order: %d\n\n", current->order);
+		printf("Order: %d\n", current->order);
+		printf("Binary string equivalent: %s\n\n", current->binstr);
+
 		current = current->next;
 	}
 	printf("Data: %d\n", current->data);
 	printf("Original Pos: %d\n", current->original_pos);
-	printf("Order: %d\n\n", current->order);
+	printf("Order: %d\n", current->order);
+	printf("Binary string equivalent: %s\n\n", current->binstr);
 	//printf("\n");
 	//printf("Last element: %d\n", current->data);
 	//printf("This is the last element in the linked list: %d\n", current->data);
@@ -271,9 +274,59 @@ void	sort_small_stack(t_linkedlist *a, t_linkedlist *b)
 	*/
 }
 
-
-
-void	sort_big_stack(t_linkedlist list)
+void	radix(t_linkedlist *a, t_linkedlist *b, int subtract)
 {
+	t_node	*current_a;
+	t_node	*current_b;
+	int		index;
+
+	current_a = a->head;
+	/*
+	Seems likely that I will have to pad numbers with zeroes in front
+	meaning I will have to malloc every binstr with the same num of bytes
+	as that of the longest binstr
+	*/
+	while (current_a != NULL)
+	{
+		index = current_a->length - 1 - subtract;
+		if (index > 0 && (current_a->binstr[index] == '0'))
+		{
+			pb(a, b);
+		}
+		else if (current_a->binstr[index] == '1')
+			ra(a);
+		current_a = current_a->next;
+	}
+	current_b = b->head;
+	while (current_b != NULL)
+	{
+		pa(a, b);
+		current_b = current_b->next;
+	}
+}
+
+void	sort_big_stack(t_linkedlist *a, t_linkedlist *b)
+{
+	t_node	*current;
+	int		length;
+	int		index;
+	int		subtract;
+	int		iter;
+	char	*binstr;
 	
+	fromdeci(binstr, a->size);
+	iter = simplifier(a);
+	subtract = 0;
+
+	if ((length - subtract) < 1)
+	{
+		current = current->next;
+	}
+
+	current = a->head;
+	while (current != NULL)
+	{
+		current = current->next;
+	}
+	subtract++;
 }

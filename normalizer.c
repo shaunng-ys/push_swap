@@ -40,14 +40,38 @@ void	labeller(t_linkedlist *list)
 	}
 }
 
-void	simplifier(t_linkedlist *list)
+int	simplifier(t_linkedlist *list)
 {
 	t_node	*current;
+	int		temp;
+	int		bytes;
+	int		highest;
+	//int		loop;
 
 	current = list->head;
+	highest = 0;
+	//loop = 0;
 	while (current != NULL)
 	{
-		
+		bytes = 0;
+		temp = current->order;
+		while (temp > 0)
+		{
+			temp = temp / 2;
+			bytes++;
+		}
+		if (bytes > highest)
+			highest = bytes;
+		printf("This is the number of bytes allocated: %d\n\n", (bytes + 1));
+		current->length = bytes;
+		current->binstr = (char*)malloc((bytes * sizeof(char)) + 1);
+		if (current->binstr == 0)
+		{
+			printf("Could not malloc!");
+			return (0);
+		}
+		fromdeci(current->binstr, current->order);
 		current = current->next;
 	}
+	return (highest);
 }
