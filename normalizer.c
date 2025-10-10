@@ -30,8 +30,8 @@ void	labeller(t_linkedlist *list)
 
 	smallest_node = find_smallest(list);
 	largest_node = find_largest(list);
-	smallest_node->order = 1;
-	pos = 1;
+	smallest_node->order = 0;
+	pos = 0;
 	while (smallest_node != largest_node)
 	{
 		//printf("This is the current smallest node: %d\n", smallest_node->data);
@@ -40,38 +40,38 @@ void	labeller(t_linkedlist *list)
 	}
 }
 
-int	simplifier(t_linkedlist *list)
+int	simplifier(t_linkedlist *list, int bytes)
 {
 	t_node	*current;
 	int		temp;
-	int		bytes;
+	//int		bytes;
 	int		highest;
 	//int		loop;
 
 	current = list->head;
-	highest = 0;
+	//highest = 0;
 	//loop = 0;
 	while (current != NULL)
 	{
-		bytes = 0;
-		temp = current->order;
-		while (temp > 0)
-		{
-			temp = temp / 2;
-			bytes++;
-		}
-		if (bytes > highest)
-			highest = bytes;
-		printf("This is the number of bytes allocated: %d\n\n", (bytes + 1));
-		current->length = bytes;
+		// bytes = 0;
+		// temp = current->order;
+		// while (temp > 0)
+		// {
+		// 	temp = temp / 2;
+		// 	bytes++;
+		// }
+		// if (bytes > highest)
+		// 	highest = bytes;
+		// printf("This is the number of bytes allocated: %d\n\n", (bytes + 1));
+		// current->length = bytes;
 		current->binstr = (char*)malloc((bytes * sizeof(char)) + 1);
 		if (current->binstr == 0)
 		{
 			printf("Could not malloc!");
 			return (0);
 		}
-		fromdeci(current->binstr, current->order);
+		fromdeci(current->binstr, current->order, bytes);
 		current = current->next;
 	}
-	return (highest);
+	return (1);
 }

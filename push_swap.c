@@ -104,7 +104,8 @@ int	main(int argc, char **argv)
 		labeller(stack_a);
 		//simplifier(stack_a);
 		display_list_plus(stack_a);
-		sort_big_stack()
+		sort_big_stack(stack_a, stack_b);
+		//display_list_plus(stack_a);
 	}
 	// current_a = stack_a->head;
 	// while (current_a != NULL)

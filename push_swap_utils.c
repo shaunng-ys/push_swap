@@ -52,7 +52,6 @@ void	display_list_plus(t_linkedlist *list)
 		printf("Original Pos: %d\n", current->original_pos);
 		printf("Order: %d\n", current->order);
 		printf("Binary string equivalent: %s\n\n", current->binstr);
-
 		current = current->next;
 	}
 	printf("Data: %d\n", current->data);
@@ -274,11 +273,12 @@ void	sort_small_stack(t_linkedlist *a, t_linkedlist *b)
 	*/
 }
 
-void	radix(t_linkedlist *a, t_linkedlist *b, int subtract)
+// , int subtract)
+void	radix(t_linkedlist *a, t_linkedlist *b, int index, int size)
 {
 	t_node	*current_a;
 	t_node	*current_b;
-	int		index;
+	//int		index;
 
 	current_a = a->head;
 	/*
@@ -286,47 +286,90 @@ void	radix(t_linkedlist *a, t_linkedlist *b, int subtract)
 	meaning I will have to malloc every binstr with the same num of bytes
 	as that of the longest binstr
 	*/
-	while (current_a != NULL)
+	while (size > 0)
 	{
-		index = current_a->length - 1 - subtract;
-		if (index > 0 && (current_a->binstr[index] == '0'))
+		//index = current_a->length - 1 - subtract;
+		// if (index > 0) &&
+		if (current_a->binstr[index] == '0')
 		{
 			pb(a, b);
 		}
 		else if (current_a->binstr[index] == '1')
 			ra(a);
-		current_a = current_a->next;
+		size--;
+		current_a = a->head;
+		// current_a = current_a->next;
 	}
+	// while (current_a != NULL)
+	// {
+	// 	//index = current_a->length - 1 - subtract;
+	// 	// if (index > 0) &&
+	// 	if (current_a->binstr[index] == '0')
+	// 	{
+	// 		pb(a, b);
+	// 	}
+	// 	else if (current_a->binstr[index] == '1')
+	// 		ra(a);
+	// 	current_a = a->head;
+	// 	// current_a = current_a->next;
+	// }
+	printf("The following is in stack a\n");
+	display_list_plus(a);
+	printf("\n");
+	printf("The following is in stack b\n");
+	display_list_plus(b);
 	current_b = b->head;
 	while (current_b != NULL)
 	{
 		pa(a, b);
-		current_b = current_b->next;
+		current_b = b->head;
+		// current_b = current_b->next;
 	}
+	printf("This is the end result of the last iteration\n");
+	display_list_plus(a);
 }
 
 void	sort_big_stack(t_linkedlist *a, t_linkedlist *b)
 {
 	t_node	*current;
-	int		length;
+	int		biggest;
+	int		max_length;
 	int		index;
-	int		subtract;
+	//int		subtract;
 	int		iter;
 	char	*binstr;
+
+	printf("This is the number of integers inputted: %d\n", a->size);
+	biggest = a->size;
+	max_length = 0;
+	while (biggest > 0)
+	{
+		biggest = biggest / 2;
+		max_length++;
+	}
+	biggest = a->size;
+	printf("This is the max_length: %d\n", max_length);
+	simplifier(a, max_length);
+	index = max_length - 1;
+	display_list_plus(a);
+	//radix(a, b, index, biggest);
 	
-	fromdeci(binstr, a->size);
-	iter = simplifier(a);
-	subtract = 0;
-
-	if ((length - subtract) < 1)
+	while (index >= 0)
 	{
-		current = current->next;
+		radix(a, b, index, biggest);
+		printf("\nThis is index now: %d\n", index);
+		index--;
+		display_list_plus(a);
 	}
 
-	current = a->head;
-	while (current != NULL)
-	{
-		current = current->next;
-	}
-	subtract++;
+	// if ((max_length - subtract) < 1)
+	// {
+	// 	current = current->next;
+	// }
+	// current = a->head;
+	// while (current != NULL)
+	// {
+	// 	current = current->next;
+	// }
+	// subtract++;
 }

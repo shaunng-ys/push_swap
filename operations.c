@@ -81,7 +81,7 @@ int	pb(t_linkedlist *a, t_linkedlist *b)
 		temp2 = b->head;
 		a->head = temp1->next;
 		b->head = temp1;
-		b->head->next = temp2; 
+		b->head->next = temp2;
 	}
 	return (0);
 }
@@ -96,7 +96,7 @@ void	ra(t_linkedlist *a)
 	t_node	*first_node;
 	t_node	*second_node;
 	t_node	*current;
-	
+
 	first_node = a->head;
 	second_node = first_node->next;
 	a->head = second_node;

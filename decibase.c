@@ -60,7 +60,22 @@ void	strrev(char *str)
 // 	return (binstr);
 // }
 
-void	fromdeci(char *binstr, int data)
+// int	fromdeci(char *binstr, int data)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	while (data > 0)
+// 	{
+// 		binstr[i++] = (data % 2) + '0';
+// 		data = data / 2;
+// 	}
+// 	binstr[i] = '\0';
+// 	strrev(binstr);
+// 	return (strlen(binstr));
+// }
+
+void	fromdeci(char *binstr, int data, int bytes)
 {
 	int	i;
 
@@ -68,10 +83,17 @@ void	fromdeci(char *binstr, int data)
 	while (data > 0)
 	{
 		binstr[i++] = (data % 2) + '0';
+		bytes--;
 		data = data / 2;
+	}
+	while (bytes > 0)
+	{
+		binstr[i++] = '0';
+		bytes--;
 	}
 	binstr[i] = '\0';
 	strrev(binstr);
+	//return (strlen(binstr));
 }
 // int	main(int argc, char **argv)
 // {
