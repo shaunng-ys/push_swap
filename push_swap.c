@@ -109,6 +109,10 @@ int	main(int argc, char **argv)
 		//simplifier(stack_a);
 		// display_list_plus(stack_a);
 		sort_big_stack(stack_a, stack_b);
+		// free_binstr(stack_a);
+		// free_nodes(stack_a->head);
+		// free(stack_a);
+		// free(stack_b);
 		//display_list_plus(stack_a);
 	}
 	// current_a = stack_a->head;

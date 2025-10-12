@@ -64,5 +64,7 @@ void			rr(t_linkedlist *a, t_linkedlist *b);
 void			rra(t_linkedlist *a);
 void			rrb(t_linkedlist *b);
 void			rrr(t_linkedlist *a, t_linkedlist *b);
+void			free_binstr(t_linkedlist *a);
+void			free_nodes(t_node *head);
 
 #endif
