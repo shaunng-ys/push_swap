@@ -20,50 +20,50 @@ This is for personal testing purposes. Cannot be used for submission.
 
 void	display_list(t_linkedlist *list)
 {
-	//printf("I've entered here!\n");
+	//ft_printf("I've entered here!\n");
 	t_node	*current;
 
 	current = list->head;
-	// printf("This is a display of the linkedlist:\n");
+	// ft_printf("This is a display of the linkedlist:\n");
 	while (current->next != NULL)
 	{
-		printf("%d\n", current->data);
+		ft_printf("%d\n", current->data);
 		current = current->next;
 	}
-	printf("%d\n", current->data);
-	printf("\n");
-	//printf("Last element: %d\n", current->data);
-	//printf("This is the last element in the linked list: %d\n", current->data);
+	ft_printf("%d\n", current->data);
+	ft_printf("\n");
+	//ft_printf("Last element: %d\n", current->data);
+	//ft_printf("This is the last element in the linked list: %d\n", current->data);
 	//ft_putnbr_fd(current->data, 1);
 	//ft_putchar_fd('\n', 1);
-	//printf("Last element: %d\n", current->data);
+	//ft_printf("Last element: %d\n", current->data);
 }
 
 void	display_list_plus(t_linkedlist *list)
 {
-	//printf("I've entered here!\n");
+	//ft_printf("I've entered here!\n");
 	t_node	*current;
 
 	current = list->head;
-	// printf("This is a display of the linkedlist:\n");
+	// ft_printf("This is a display of the linkedlist:\n");
 	while (current->next != NULL)
 	{
-		printf("Data: %d\n", current->data);
-		printf("Original Pos: %d\n", current->original_pos);
-		printf("Order: %d\n", current->order);
-		printf("Binary string equivalent: %s\n\n", current->binstr);
+		ft_printf("Data: %d\n", current->data);
+		ft_printf("Original Pos: %d\n", current->original_pos);
+		ft_printf("Order: %d\n", current->order);
+		ft_printf("Binary string equivalent: %s\n\n", current->binstr);
 		current = current->next;
 	}
-	printf("Data: %d\n", current->data);
-	printf("Original Pos: %d\n", current->original_pos);
-	printf("Order: %d\n", current->order);
-	printf("Binary string equivalent: %s\n\n", current->binstr);
-	//printf("\n");
-	//printf("Last element: %d\n", current->data);
-	//printf("This is the last element in the linked list: %d\n", current->data);
+	ft_printf("Data: %d\n", current->data);
+	ft_printf("Original Pos: %d\n", current->original_pos);
+	ft_printf("Order: %d\n", current->order);
+	ft_printf("Binary string equivalent: %s\n\n", current->binstr);
+	//ft_printf("\n");
+	//ft_printf("Last element: %d\n", current->data);
+	//ft_printf("This is the last element in the linked list: %d\n", current->data);
 	//ft_putnbr_fd(current->data, 1);
 	//ft_putchar_fd('\n', 1);
-	//printf("Last element: %d\n", current->data);
+	//ft_printf("Last element: %d\n", current->data);
 }
 
 int	num_order_check(t_linkedlist *list)
@@ -89,7 +89,7 @@ void	push_smallest(t_linkedlist *a, t_linkedlist *b)
 	counter = 1;
 	current = a->head;
 	smallest = find_smallest(a);
-	// printf("This is the smallest integer in the linkedlist: %d\n", smallest->data);
+	// ft_printf("This is the smallest integer in the linkedlist: %d\n", smallest->data);
 	while (current != NULL && current != smallest)
 	{
 		current = current->next;
@@ -138,15 +138,15 @@ t_node	*find_smallest(t_linkedlist *a)
 		current = current->next;
 	smallest_num = current->data;
 	smallest = current;
-	//printf("This is currently at the top of the list: %d\n", smallest_num);
+	//ft_printf("This is currently at the top of the list: %d\n", smallest_num);
 	while (current != NULL)
 	{
-		//printf("I've entered the loop\n");
+		//ft_printf("I've entered the loop\n");
 		if ((smallest_num > current->data) && (current->check == 0))
 		{
-			//printf("Current check value is: %d\n", current->check);
+			//ft_printf("Current check value is: %d\n", current->check);
 			smallest_num = current->data;
-			//printf("This is the updated smallest number: %d\n", smallest_num);
+			//ft_printf("This is the updated smallest number: %d\n", smallest_num);
 			smallest = current;
 		}
 		current = current->next;
@@ -164,14 +164,14 @@ t_node	*find_largest(t_linkedlist *a)
 	current = a->head;
 	largest_num = current->data;
 	largest = current;
-	//printf("This is currently the top of the list: %d\n", largest_num);
+	//ft_printf("This is currently the top of the list: %d\n", largest_num);
 	while (current->next != NULL)
 	{
-		//printf("I've entered the loop\n");
+		//ft_printf("I've entered the loop\n");
 		if (largest_num < current->data)
 		{
 			largest_num = current->data;
-			//printf("This is the updated largest number: %d\n", largest_num);
+			//ft_printf("This is the updated largest number: %d\n", largest_num);
 			largest = current;
 		}
 		current = current->next;
@@ -181,7 +181,7 @@ t_node	*find_largest(t_linkedlist *a)
 		largest_num = current->data;
 		largest = current;
 	}
-	//printf("This is the largest number at the end: %d\n", largest->data);
+	//ft_printf("This is the largest number at the end: %d\n", largest->data);
 	return (largest);
 }
 
@@ -195,11 +195,11 @@ void	sort_3(t_linkedlist *a)
 	smallest = find_smallest(a);
 	largest = find_largest(a);
 	// {1, 3, 2}
-	// printf("This is the smallest int: %d\n", smallest->data);
-	// printf("This is the largest int: %d\n", largest->data);
+	// ft_printf("This is the smallest int: %d\n", smallest->data);
+	// ft_printf("This is the largest int: %d\n", largest->data);
 	if (current == smallest && current->next == largest)
 	{
-		//printf("Scenario 1: {1, 3, 2}\n");
+		//ft_printf("Scenario 1: {1, 3, 2}\n");
 		rra(a);
 		sa(a);
 	}
@@ -212,26 +212,26 @@ void	sort_3(t_linkedlist *a)
 	// {3, 1, 2}
 	else if (current == largest && current->next == smallest)
 	{
-		//printf("Scenario 2: {3, 1, 2}\n");
+		//ft_printf("Scenario 2: {3, 1, 2}\n");
 		ra(a);
 	}
 	// {3, 2, 1}
 	else if (current == largest && current->next != smallest)
 	{
-		//printf("Scenario 3: {3, 2, 1}\n");
+		//ft_printf("Scenario 3: {3, 2, 1}\n");
 		ra(a);
 		sa(a);
 	}
 	// {2, 3, 1}
 	else if (current->next == largest)
 	{
-		//printf("Scenario 4: {2, 3, 1}\n");
+		//ft_printf("Scenario 4: {2, 3, 1}\n");
 		rra(a);
 	}
 	// {2, 1, 3}
 	else if (current->next == smallest)
 	{
-		//printf("Scenario 5: {2, 1, 3}\n");
+		//ft_printf("Scenario 5: {2, 1, 3}\n");
 		sa(a);
 	}
 }
@@ -313,10 +313,10 @@ void	radix(t_linkedlist *a, t_linkedlist *b, int index, int size)
 	// 	current_a = a->head;
 	// 	// current_a = current_a->next;
 	// }
-	printf("The following is in stack a\n");
+	ft_printf("The following is in stack a\n");
 	display_list_plus(a);
-	printf("\n");
-	printf("The following is in stack b\n");
+	ft_printf("\n");
+	ft_printf("The following is in stack b\n");
 	display_list_plus(b);
 	current_b = b->head;
 	while (current_b != NULL)
@@ -325,7 +325,7 @@ void	radix(t_linkedlist *a, t_linkedlist *b, int index, int size)
 		current_b = b->head;
 		// current_b = current_b->next;
 	}
-	printf("This is the end result of the last iteration\n");
+	ft_printf("This is the end result of the last iteration\n");
 	display_list_plus(a);
 }
 
@@ -339,7 +339,7 @@ void	sort_big_stack(t_linkedlist *a, t_linkedlist *b)
 	int		iter;
 	char	*binstr;
 
-	printf("This is the number of integers inputted: %d\n", a->size);
+	ft_printf("This is the number of integers inputted: %d\n", a->size);
 	biggest = a->size;
 	max_length = 0;
 	while (biggest > 0)
@@ -348,7 +348,7 @@ void	sort_big_stack(t_linkedlist *a, t_linkedlist *b)
 		max_length++;
 	}
 	biggest = a->size;
-	printf("This is the max_length: %d\n", max_length);
+	ft_printf("This is the max_length: %d\n", max_length);
 	simplifier(a, max_length);
 	index = max_length - 1;
 	display_list_plus(a);
@@ -357,7 +357,7 @@ void	sort_big_stack(t_linkedlist *a, t_linkedlist *b)
 	while (index >= 0)
 	{
 		radix(a, b, index, biggest);
-		printf("\nThis is index now: %d\n", index);
+		ft_printf("\nThis is index now: %d\n", index);
 		index--;
 		display_list_plus(a);
 	}

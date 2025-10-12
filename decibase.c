@@ -101,6 +101,6 @@ void	fromdeci(char *binstr, int data, int bytes)
 // 	char	result[100];
 
 // 	data = 6547382;
-// 	printf("This is the binary string of the number %d: %s\n", data, fromdeci(result, data));
+// 	ft_printf("This is the binary string of the number %d: %s\n", data, fromdeci(result, data));
 // 	return (0);
 // }

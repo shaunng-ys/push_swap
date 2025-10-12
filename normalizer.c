@@ -34,7 +34,7 @@ void	labeller(t_linkedlist *list)
 	pos = 0;
 	while (smallest_node != largest_node)
 	{
-		//printf("This is the current smallest node: %d\n", smallest_node->data);
+		//ft_printf("This is the current smallest node: %d\n", smallest_node->data);
 		smallest_node = find_smallest(list);
 		smallest_node->order = ++pos;
 	}
@@ -62,12 +62,12 @@ int	simplifier(t_linkedlist *list, int bytes)
 		// }
 		// if (bytes > highest)
 		// 	highest = bytes;
-		// printf("This is the number of bytes allocated: %d\n\n", (bytes + 1));
+		// ft_printf("This is the number of bytes allocated: %d\n\n", (bytes + 1));
 		// current->length = bytes;
 		current->binstr = (char*)malloc((bytes * sizeof(char)) + 1);
 		if (current->binstr == 0)
 		{
-			printf("Could not malloc!");
+			ft_printf("Could not malloc!");
 			return (0);
 		}
 		fromdeci(current->binstr, current->order, bytes);

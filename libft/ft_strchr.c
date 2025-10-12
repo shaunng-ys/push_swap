@@ -20,8 +20,8 @@ int main(void)
     int nbr;
 
     nbr = 'k';
-    printf("%s", ft_strchr(str, 't' + 256));
-    //printf("%s", ft_strchr(str, nbr));
+    ft_printf("%s", ft_strchr(str, 't' + 256));
+    //ft_printf("%s", ft_strchr(str, nbr));
     return (0);
 }
 */

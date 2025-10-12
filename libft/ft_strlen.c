@@ -21,7 +21,7 @@ size_t	ft_strlen(const char *s);
 
 // 	str = "Apple Macbook Pro 16";
 // 	r = ft_strlen(str);
-// 	printf("%zu\n", r);
+// 	ft_printf("%zu\n", r);
 // 	return (0);
 // }
 

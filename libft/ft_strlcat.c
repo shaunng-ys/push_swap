@@ -17,11 +17,11 @@ int main(void)
     char    strspace[32] = "This is the destination string ";
     const char  *source_string = "Balloon animals fly towards the sun.";
     size_t  destination_size = 0;
-    printf("%zu\n", ft_strlcat(strspace, source_string, destination_size));
-	printf("%s\n", strspace);
+    ft_printf("%zu\n", ft_strlcat(strspace, source_string, destination_size));
+	ft_printf("%s\n", strspace);
 
-	printf("%zu\n", strlcat(strspace, source_string, destination_size));
-	printf("%s\n", strspace);
+	ft_printf("%zu\n", strlcat(strspace, source_string, destination_size));
+	ft_printf("%s\n", strspace);
     return (0);
 }
 */

@@ -54,7 +54,7 @@ t_node	*createnode(int data)
 	newnode = (t_node *)malloc(sizeof(t_node));
 	if (newnode == NULL)
 	{
-		printf("Memory allocation failed\n");
+		ft_printf("Memory allocation failed\n");
 		exit(1);
 	}
 	newnode->data = data;
@@ -71,7 +71,7 @@ t_linkedlist	*createlinkedlist(void)
 
 	if (list == NULL)
 	{
-		printf("Memory allocation failed\n");
+		ft_printf("Memory allocation failed\n");
 		exit(1);
 	}
 	list->head = NULL;

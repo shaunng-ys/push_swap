@@ -20,9 +20,9 @@ int main(void)
     char    s[100] = "This string should be non-printable";
     size_t  nbr = sizeof(char)*4;
 
-    printf("%s\n", s);
+    ft_printf("%s\n", s);
     ft_bzero(s, nbr);
-    printf("This is the output after the former string has passed through);
+    ft_printf("This is the output after the former string has passed through);
     return (0);
 }
 */

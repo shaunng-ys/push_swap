@@ -19,9 +19,9 @@
 // int	main(void)
 // {
 // 	char	string[] = "THIS IS A STRING";
-// 	printf("This is the original string: %s\n", string);
+// 	ft_printf("This is the original string: %s\n", string);
 // 	ft_striteri(string, test_function);
-// 	printf("The is the string (after ft_striteri): %s\n", string);
+// 	ft_printf("The is the string (after ft_striteri): %s\n", string);
 // 	return (0);
 // }
 

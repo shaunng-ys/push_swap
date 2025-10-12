@@ -20,7 +20,7 @@
 //     unsigned int starting_char = 9;
 //     size_t max = 10;
 // 	char *substring = ft_substr(string, starting_char, max);
-//     printf("Print here: %s\n", substring);
+//     ft_printf("Print here: %s\n", substring);
 // 	free(substring);
 //     return (0);
 // }

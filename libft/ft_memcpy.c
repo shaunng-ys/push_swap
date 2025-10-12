@@ -22,9 +22,9 @@ int main(void)
     size_t nbr;
 
     nbr = 16 * sizeof(char);
-    printf("These are the original values: %s\n", destination_str);
+    ft_printf("These are the original values: %s\n", destination_str);
     ft_memcpy(destination_str, source_str, nbr);
-    printf("These are the new values: %s\n", destination_str);
+    ft_printf("These are the new values: %s\n", destination_str);
     return (0);
 }
 */
@@ -32,8 +32,8 @@ int main(void)
 // {
 // 	void *mem = malloc(sizeof(*mem) * 30);
 // 	memset(mem, 'j', 30);
-// 	printf("%s\n", (char *)memcpy(mem, "zyxwvutsrqponmlkjihgfedcba", 0));
-// 	printf("%s\n", (char *)ft_memcpy(mem, "zyxwvutsrqponmlkjihgfedcba", 0));
+// 	ft_printf("%s\n", (char *)memcpy(mem, "zyxwvutsrqponmlkjihgfedcba", 0));
+// 	ft_printf("%s\n", (char *)ft_memcpy(mem, "zyxwvutsrqponmlkjihgfedcba", 0));
 // 	return (0);
 // }
 void	*ft_memcpy(void *dest_str, const void *src_str, size_t n)

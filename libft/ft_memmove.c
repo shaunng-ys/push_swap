@@ -18,9 +18,9 @@
 //     char    source_string[] = "lorem ipsum dolor sit amet";
 // 	char	*dest = source_string + 1;
 //     char    destination_string[100] = "_________ Faith";
-//     printf("This is the source string: %s\n", source_string);
-//     printf("This is the destination string: %s\n", destination_string);
-//     printf("This is the destination string: %s\n", destination_string);
+//     ft_printf("This is the source string: %s\n", source_string);
+//     ft_printf("This is the destination string: %s\n", destination_string);
+//     ft_printf("This is the destination string: %s\n", destination_string);
 //     return (0);
 // }
 
@@ -56,9 +56,9 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 //     unsigned int    nbr = 10000000;
 //     const char    *source_string = "Immovable";
 //     char    destination_string[100] = "_________ Faith";
-//     // printf("This is the source string: %s\n", source_string);
-//     // printf("This is the destination string: %s\n", destination_string);
-//     // printf("This is the destination string: %s\n", destination_string);
+//     // ft_printf("This is the source string: %s\n", source_string);
+//     // ft_printf("This is the destination string: %s\n", destination_string);
+//     // ft_printf("This is the destination string: %s\n", destination_string);
 //     return (0);
 // }
 

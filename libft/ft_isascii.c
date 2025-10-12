@@ -27,11 +27,11 @@ int	main(void)
 	c2 = '2';
 	c3 = 'a';
 	c4 = 200;
-	printf("%d\n", ft_isascii(c0));
-	printf("%d\n", ft_isascii(c1));
-	printf("%d\n", ft_isascii(c2));
-	printf("%d\n", ft_isascii(c3));
-	printf("%d\n", ft_isascii(c4));
+	ft_printf("%d\n", ft_isascii(c0));
+	ft_printf("%d\n", ft_isascii(c1));
+	ft_printf("%d\n", ft_isascii(c2));
+	ft_printf("%d\n", ft_isascii(c3));
+	ft_printf("%d\n", ft_isascii(c4));
 	return (0);
 }
 */

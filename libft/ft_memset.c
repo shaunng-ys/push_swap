@@ -29,11 +29,11 @@ int	main(void)
 	ft_memset(ptr2, nbr, 2);
 	while (n < 4)
 	{
-		printf("%d", arr[i]);
+		ft_printf("%d", arr[i]);
 		n++;
 		i++;
 	}
-	printf("\n%s", string);
+	ft_printf("\n%s", string);
 	return (0);
 }
 */

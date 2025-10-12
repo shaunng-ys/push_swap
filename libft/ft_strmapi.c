@@ -20,7 +20,7 @@ char	add_one(unsigned int i, char c)
 int	main(void)
 {
 	char	*string = "12345";
-	printf("ft_strmapi result: %s", ft_strmapi(string, add_one));
+	ft_printf("ft_strmapi result: %s", ft_strmapi(string, add_one));
 	return (0);
 }
 */

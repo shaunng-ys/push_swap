@@ -21,8 +21,8 @@ int	main(void)
 
 	c0 = '\n';
 	c1 = 'a';
-	printf("%d\n", ft_isprint(126));
-	printf("%d\n", ft_isprint(c1));
+	ft_printf("%d\n", ft_isprint(126));
+	ft_printf("%d\n", ft_isprint(c1));
 	return (0);
 }
 */

@@ -17,14 +17,14 @@ int	ft_isalnum(int c);
 
 int	main(void)
 {
-	printf("Statement is true if followed by 1, false if followed by 0\n");
-	printf("Is 'A' alphanumeric: %d\n", ft_isalnum('A'));
-	printf("Is 'Z' alphanumeric: %d\n", ft_isalnum('Z'));
-	printf("Is 'a' alphanumeric: %d\n", ft_isalnum('a'));
-	printf("Is 'z' alphanumeric: %d\n", ft_isalnum('z'));
-	printf("Is '0' alphanumeric: %d\n", ft_isalnum('0'));
-	printf("Is '9' alphanumeric: %d\n", ft_isalnum('9'));
-	printf("Is null alphanumeric: %d\n", ft_isalnum(0));
+	ft_printf("Statement is true if followed by 1, false if followed by 0\n");
+	ft_printf("Is 'A' alphanumeric: %d\n", ft_isalnum('A'));
+	ft_printf("Is 'Z' alphanumeric: %d\n", ft_isalnum('Z'));
+	ft_printf("Is 'a' alphanumeric: %d\n", ft_isalnum('a'));
+	ft_printf("Is 'z' alphanumeric: %d\n", ft_isalnum('z'));
+	ft_printf("Is '0' alphanumeric: %d\n", ft_isalnum('0'));
+	ft_printf("Is '9' alphanumeric: %d\n", ft_isalnum('9'));
+	ft_printf("Is null alphanumeric: %d\n", ft_isalnum(0));
 	return (0);
 }
 */

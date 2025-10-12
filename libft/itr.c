@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   itr.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shaun <sng@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/14 22:36:51 by shaun             #+#    #+#             */
-/*   Updated: 2025/01/14 22:36:59 by shaun             ###   ########kl       */
+/*   Created: 2025/02/14 17:35:10 by shaun             #+#    #+#             */
+/*   Updated: 2025/02/14 17:35:14 by shaun             ###   ########kl       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// #include <fcntl.h>
 
-// int	main(void)
-// {
-// 	int fd = open("./test.c", O_RDWR);
-// 	ft_putchar_fd('c', fd);
-// 	return (0);
-// }
-// void	ft_putchar_fd(char c, int fd)
-// {
-// 	write(fd, &c, 1);
-// }
-
-int	ft_putchar_fd(char c, int fd)
+size_t	itr(unsigned long nbr, char *base)
 {
-	write(fd, &c, 1);
-	return (1);
+	size_t	n;
+	size_t	placeholder;
+	size_t	base_nbr;
+
+	n = 0;
+	placeholder = nbr;
+	base_nbr = ft_strlen(base);
+	if (placeholder == 0)
+		n++;
+	while (placeholder > 0)
+	{
+		placeholder = placeholder / base_nbr;
+		n++;
+	}
+	return (n);
 }

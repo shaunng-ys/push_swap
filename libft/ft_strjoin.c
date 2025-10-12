@@ -39,7 +39,7 @@ of ’s1’ and ’s2’.
 //    char const  *first_string = "Nike & ";
 //    char const  *second_string = "Adidas";
 //    */
-//    printf("%s", ft_strjoin(first_string, second_string));
+//    ft_printf("%s", ft_strjoin(first_string, second_string));
 //    return (0);
 // }
 

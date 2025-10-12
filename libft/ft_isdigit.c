@@ -19,7 +19,7 @@ int	main(void)
 	char	c;
 
 	c = '\n';
-	printf("%d", ft_isdigit(c));
+	ft_printf("%d", ft_isdigit(c));
 	return (0);
 }
 */

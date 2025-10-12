@@ -46,7 +46,7 @@
 //     char    *str1 = "test\0";
 //     size_t limiter = 6;
 
-//     printf("%d", ft_strncmp(str0, str1, limiter));
+//     ft_printf("%d", ft_strncmp(str0, str1, limiter));
 //     return (0);
 // }
 

@@ -19,8 +19,8 @@
 // 	const char	*smallstring = "aaabc";
 // 	char *ptr;
 // 	ptr = ft_strnstr(largestring, smallstring, 5);
-// 	printf("%s\n", ptr);
-// 	printf("%s\n", strnstr(largestring, smallstring, 5));
+// 	ft_printf("%s\n", ptr);
+// 	ft_printf("%s\n", strnstr(largestring, smallstring, 5));
 // 	return (0);
 // }
 

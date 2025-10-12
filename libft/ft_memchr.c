@@ -14,8 +14,8 @@
 
 // int main(void)
 // {
-// 	printf("%s", ((char *)memchr("bonjour", 's', 7)));
-//     printf("\n%s", ((char *)ft_memchr("bonjour", 's', 7)));
+// 	ft_printf("%s", ((char *)memchr("bonjour", 's', 7)));
+//     ft_printf("\n%s", ((char *)ft_memchr("bonjour", 's', 7)));
 //     return (0);
 // }
 

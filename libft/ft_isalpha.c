@@ -19,7 +19,7 @@ int	main(void)
 	char	c;
 	
 	c = 'a';
-	printf("%d", ft_isalpha(c));	
+	ft_printf("%d", ft_isalpha(c));	
 	return (0);
 }
 */

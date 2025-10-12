@@ -19,10 +19,10 @@
 //     int i = 0;
 
 //     memspace_ptr = ft_calloc(30, sizeof(char));
-//     printf("%p\n", memspace_ptr);
+//     ft_printf("%p\n", memspace_ptr);
 //     while (counter)
 //     {
-//         printf("%d", ((char *)memspace_ptr)[i]);
+//         ft_printf("%d", ((char *)memspace_ptr)[i]);
 //         i++;
 //         counter--;
 //     }

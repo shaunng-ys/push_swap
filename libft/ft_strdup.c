@@ -17,7 +17,7 @@
 //     const char  *src_str = "lorem ipsum dolor sit amet";
 //     char    *ptr2dup;
 //     ptr2dup = ft_strdup(src_str);
-//     printf("%p\n%s", ptr2dup, ptr2dup);    
+//     ft_printf("%p\n%s", ptr2dup, ptr2dup);    
 //     return (0);
 // }
 

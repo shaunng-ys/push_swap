@@ -17,8 +17,8 @@
 //     int nbr;
 
 //     nbr = -2147483648LL;
-// 	printf("%d\n", INT32_MIN);
-//     printf("\nThis is the number that was inputed: %s", ft_itoa(nbr));
+// 	ft_printf("%d\n", INT32_MIN);
+//     ft_printf("\nThis is the number that was inputed: %s", ft_itoa(nbr));
 //     return (0);
 // }
 

@@ -20,7 +20,7 @@ int main(void)
     char    *str = "bonjour";
 
     a = 'b';
-    printf("%s", ft_strrchr(str, a));
+    ft_printf("%s", ft_strrchr(str, a));
     return (0);
 }
 */

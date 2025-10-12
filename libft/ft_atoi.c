@@ -15,11 +15,11 @@
 // int main(void)
 // {
 //     const char  *str_nbr = "       -684909876789098731295abcd";
-//     // printf("%d\n", ft_atoi(str_nbr));
-// 	printf("%d\n\n", ft_atoi("+-54"));
-// 	// printf("%d\n", atoi(str_nbr));
-// 	// printf("%d\n", atoi(str_nbr));	
-// 	// printf("%d\n", ft_atoi(str_nbr));
+//     // ft_printf("%d\n", ft_atoi(str_nbr));
+// 	ft_printf("%d\n\n", ft_atoi("+-54"));
+// 	// ft_printf("%d\n", atoi(str_nbr));
+// 	// ft_printf("%d\n", atoi(str_nbr));	
+// 	// ft_printf("%d\n", ft_atoi(str_nbr));
 // 	return (0);
 // }
 

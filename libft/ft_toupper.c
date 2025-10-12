@@ -16,7 +16,7 @@ int ft_toupper(int c);
 
 int main(void)
 {
-    printf("%c\n", ft_toupper(123));
+    ft_printf("%c\n", ft_toupper(123));
     return (0);
 }
 */
