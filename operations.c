@@ -35,17 +35,23 @@ void	sa(t_linkedlist *stack_a)
 	second_node = stack_a->head->next;
 	second_node->next = first_node;
 	*/
+	stack_a->num_operation++;
+	ft_printf("sa\n");
 }
 //sb (swap b ) :  If there are 2 numbers, swap the first 2 elements at the top of the stack b.
 void	sb(t_linkedlist *b)
 {
 	sa(b);
+	b->num_operation++;
+	ft_printf("sb\n");
 }
 //ss : sa and sb at the same time.
 void	ss(t_linkedlist *a, t_linkedlist *b)
 {
 	sa(a);
 	sa(b);
+	b->num_operation--;
+	ft_printf("ss\n");
 }
 
 //pa (push a): If b is not empty it takes the first element on top of b and puts it on a.
@@ -64,6 +70,8 @@ int	pa(t_linkedlist *a, t_linkedlist *b)
 		a->head = temp1;
 		a->head->next = temp2; 
 	}
+	a->num_operation++;
+	ft_printf("pa\n");
 	return (0);
 }
 
@@ -83,6 +91,8 @@ int	pb(t_linkedlist *a, t_linkedlist *b)
 		b->head = temp1;
 		b->head->next = temp2;
 	}
+	a->num_operation++;
+	ft_printf("pb\n");
 	return (0);
 }
 // int	pb(t_linkedlist *b)
@@ -107,12 +117,15 @@ void	ra(t_linkedlist *a)
 		current = current->next;
 	}
 	current->next = first_node;
+	a->num_operation++;
+	ft_printf("ra\n");
 }
 
 // rb (rotate b) : Shifts all the elements of the stack b one position upwards. The first element becomes the last one. 
 void	rb(t_linkedlist *b)
 {
 	ra(b);
+	ft_printf("rb\n");
 }
 
 // rr : ra and rb at the same time. 
@@ -120,6 +133,7 @@ void	rr(t_linkedlist *a, t_linkedlist *b)
 {
 	ra(a);
 	ra(b);
+	ft_printf("rr\n");
 }
 
 // rra (reverse rotate a): Shifts all elements of the stack down one position. the stack a. The last element becomes the first. 
@@ -141,12 +155,16 @@ void	rra(t_linkedlist *a)
 	second_last_node->next = NULL;
 	a->head = last_node;
 	a->head->next = first_node;
+	a->num_operation++;
+	ft_printf("rra\n");
 }
 
 // rrb (reverse rotate b): Shifts all the elements of the stack b one position downwards. the stack b. The last element becomes the first. 
 void	rrb(t_linkedlist *b)
 {
 	rra(b);
+	b->num_operation++;
+	ft_printf("rrb\n");
 }
 
 // rrr : rra and rrb at the same time
@@ -154,4 +172,6 @@ void	rrr(t_linkedlist *a, t_linkedlist *b)
 {
 	rra(a);
 	rra(b);
+	b->num_operation--;
+	ft_printf("rrr\n");
 }

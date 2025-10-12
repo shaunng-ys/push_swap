@@ -95,15 +95,19 @@ int	main(int argc, char **argv)
 	// rrr(stack_a, stack_b);
 	if (stack_a->size <= 5)
 	{
+		stack_a->num_operation = 0;
+		stack_b->num_operation = 0;
 		sort_small_stack(stack_a, stack_b);
 		ft_printf("We've done some work! Let's check again to see if the stack has been sorted\n\n");
 		display_list(stack_a);
 	}
 	if (stack_a->size > 5)
 	{
+		stack_a->num_operation = 0;
+		stack_b->num_operation = 0;
 		labeller(stack_a);
 		//simplifier(stack_a);
-		display_list_plus(stack_a);
+		// display_list_plus(stack_a);
 		sort_big_stack(stack_a, stack_b);
 		//display_list_plus(stack_a);
 	}
@@ -127,8 +131,12 @@ int	main(int argc, char **argv)
 		ft_printf("Hmm, it seems the stack has still not been sorted\n\n");
 	}
 	else
+	{
 		ft_printf("Great! We managed to sort the stack, this calls for celebration!\n\n");
-	ft_printf("Also, I just wanted to test out this function!\n");
+		ft_printf("This is the num_operations in stack a: %d\n", stack_a->num_operation);
+		ft_printf("This is the num_operations in stack b: %d\n", stack_b->num_operation);
+		ft_printf("And hence this is the total number of operations taken to sort the stack: %d\n", (stack_a->num_operation + stack_b->num_operation));
+	}
 	// if (num_order_check(stack_a) == 1)
 	// {
 	// 	ft_printf("Linkedlist is not yet sorted\n");

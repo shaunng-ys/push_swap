@@ -29,6 +29,7 @@ typedef struct s_linkedlist
 {
 	t_node	*head;
 	int		size;
+	int		num_operation;
 }	t_linkedlist;
 
 t_node			*createnode(int data);

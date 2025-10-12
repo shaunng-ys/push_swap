@@ -313,11 +313,11 @@ void	radix(t_linkedlist *a, t_linkedlist *b, int index, int size)
 	// 	current_a = a->head;
 	// 	// current_a = current_a->next;
 	// }
-	ft_printf("The following is in stack a\n");
-	display_list_plus(a);
-	ft_printf("\n");
-	ft_printf("The following is in stack b\n");
-	display_list_plus(b);
+	// ft_printf("The following is in stack a\n");
+	// display_list_plus(a);
+	// ft_printf("\n");
+	// ft_printf("The following is in stack b\n");
+	// display_list_plus(b);
 	current_b = b->head;
 	while (current_b != NULL)
 	{
@@ -325,8 +325,8 @@ void	radix(t_linkedlist *a, t_linkedlist *b, int index, int size)
 		current_b = b->head;
 		// current_b = current_b->next;
 	}
-	ft_printf("This is the end result of the last iteration\n");
-	display_list_plus(a);
+	// ft_printf("This is the end result of the last iteration\n");
+	// display_list_plus(a);
 }
 
 void	sort_big_stack(t_linkedlist *a, t_linkedlist *b)
@@ -359,7 +359,7 @@ void	sort_big_stack(t_linkedlist *a, t_linkedlist *b)
 		radix(a, b, index, biggest);
 		ft_printf("\nThis is index now: %d\n", index);
 		index--;
-		display_list_plus(a);
+		// display_list_plus(a);
 	}
 
 	// if ((max_length - subtract) < 1)
