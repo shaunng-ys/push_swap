@@ -374,44 +374,25 @@ void	sort_big_stack(t_linkedlist *a, t_linkedlist *b)
 	// subtract++;
 }
 
-// void	free_binstr(t_linkedlist *a)
-// {
-// 	t_node	*current;
-
-// 	current = a->head;
-// 	while (current != NULL)
-// 	{
-// 		free(current->binstr);
-// 		current = current->next;
-// 	}
-// }
-
-// void	free_nodes(t_node *head)
-// {
-// 	t_node	*temp;
-
-// 	while (head != NULL)
-// 	{
-// 		temp = head;
-// 		head = head->next;
-// 		free(temp);
-// 	}
-// }
-
-void free_nodes(t_node *head)
+void	free_binstr(t_linkedlist *a)
 {
-	t_node *temp;
+	t_node	*current;
 
-	temp = head;
-	while (head)
+	current = a->head;
+	while (current != NULL)
+	{
+		free(current->binstr);
+		current = current->next;
+	}
+}
+
+void	free_nodes(t_node *head)
+{
+	t_node	*temp;
+
+	while (head != NULL)
 	{
 		temp = head;
-		// free(temp->data);
-		// free(temp->check);
-		// free(temp->original_pos);
-		// free(temp->order);
-		// free(temp->length);
-		free(temp->binstr);
 		head = head->next;
 		free(temp);
 	}

@@ -75,7 +75,9 @@ size_t	string_checker(char *s)
 		else if (counter == 1)
 			counter = 0;
 		j = 0;
+		free(d_array[i]);
 		i++;
 	}
+	free(d_array);
 	return (0);
 }
