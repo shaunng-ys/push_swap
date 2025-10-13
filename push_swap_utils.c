@@ -397,3 +397,22 @@ void	sort_big_stack(t_linkedlist *a, t_linkedlist *b)
 // 		free(temp);
 // 	}
 // }
+
+void free_nodes(t_node *head)
+{
+	t_node *temp;
+
+	temp = head;
+	while (head)
+	{
+		temp = head;
+		// free(temp->data);
+		// free(temp->check);
+		// free(temp->original_pos);
+		// free(temp->order);
+		// free(temp->length);
+		free(temp->binstr);
+		head = head->next;
+		free(temp);
+	}
+}

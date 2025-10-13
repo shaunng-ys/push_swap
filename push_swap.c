@@ -34,7 +34,10 @@ int	main(int argc, char **argv)
 	stack_b = createlinkedlist();
 	//Condition being true means there aren't any strings
 	if (argc == 1)
+	{
 		ft_putstr_fd("Error\n", 1);
+		return (1);
+	}
 	else
 	{
 		while (args)
@@ -53,10 +56,12 @@ int	main(int argc, char **argv)
 				{
 					//ft_printf("Current string: %s\n", strings[j]);
 					append(stack_a, ft_atoi(strings[j]));
+					free(strings[j]);
 					//append(stack_b, integer++);
 					//display_last(list);
 					j++;
 				}
+				free(strings);
 				//ft_printf("This string is okay for sure!\n");
 			}
 			j = 0;
@@ -110,7 +115,7 @@ int	main(int argc, char **argv)
 		// display_list_plus(stack_a);
 		sort_big_stack(stack_a, stack_b);
 		// free_binstr(stack_a);
-		// free_nodes(stack_a->head);
+		free_nodes(stack_a->head);
 		// free(stack_a);
 		// free(stack_b);
 		//display_list_plus(stack_a);
@@ -141,10 +146,14 @@ int	main(int argc, char **argv)
 		ft_printf("This is the num_operations in stack b: %d\n", stack_b->num_operation);
 		ft_printf("And hence this is the total number of operations taken to sort the stack: %d\n", (stack_a->num_operation + stack_b->num_operation));
 	}
+	free_nodes(stack_a->head);
+	free(stack_a);
+	free(stack_b);
 	// if (num_order_check(stack_a) == 1)
 	// {
 	// 	ft_printf("Linkedlist is not yet sorted\n");
 	// }
 	// else
 	// 	ft_printf("Linkedlist is sorted\n");
+	return (0);
 }
