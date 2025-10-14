@@ -68,7 +68,6 @@ t_linkedlist	*createlinkedlist(void)
 	t_linkedlist	*list;
 
 	list = (t_linkedlist *)malloc(sizeof(t_linkedlist));
-
 	if (list == NULL)
 	{
 		ft_printf("Memory allocation failed\n");
@@ -94,10 +93,6 @@ void	append(t_linkedlist *list, int data)
 	current = list->head;
 	if (list->head == NULL)
 	{
-	/*
-	I think I should be able to use a different condition here
-	as well: if (list->size = 0), not important, just a thought hehe
-	*/
 		list->head = newnode;
 		newnode->original_pos = 1;
 	}

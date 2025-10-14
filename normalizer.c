@@ -11,14 +11,6 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-/*
-To normalize the data, I need to first label the data with their ascending order
-; and to this I'd probably need a function to find the smallest integer (going
-through the linkedlist)
-*/
-
-
-//int	current_num;
 
 void	labeller(t_linkedlist *list)
 {
@@ -34,7 +26,6 @@ void	labeller(t_linkedlist *list)
 	pos = 0;
 	while (smallest_node != largest_node)
 	{
-		//ft_printf("This is the current smallest node: %d\n", smallest_node->data);
 		smallest_node = find_smallest(list);
 		smallest_node->order = ++pos;
 	}
@@ -44,27 +35,12 @@ int	simplifier(t_linkedlist *list, int bytes)
 {
 	t_node	*current;
 	int		temp;
-	//int		bytes;
 	int		highest;
-	//int		loop;
 
 	current = list->head;
-	//highest = 0;
-	//loop = 0;
 	while (current != NULL)
 	{
-		// bytes = 0;
-		// temp = current->order;
-		// while (temp > 0)
-		// {
-		// 	temp = temp / 2;
-		// 	bytes++;
-		// }
-		// if (bytes > highest)
-		// 	highest = bytes;
-		// ft_printf("This is the number of bytes allocated: %d\n\n", (bytes + 1));
-		// current->length = bytes;
-		current->binstr = (char*)malloc((bytes * sizeof(char)) + 1);
+		current->binstr = (char *)malloc((bytes * sizeof(char)) + 1);
 		if (current->binstr == 0)
 		{
 			ft_printf("Could not malloc!");

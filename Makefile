@@ -22,11 +22,11 @@ NAME = push_swap
 
 INC = push_swap.h
 
-SRC = string_checker.c add_to_stack.c operations.c push_swap_utils.c\
-	push_swap.c decibase.c normalizer.c
+SRC = string_checker.c add_to_stack.c operations1.c operations2.c operations3.c\
+	push_swap_utils.c push_swap.c decibase.c normalizer.c
 
-OBJ = string_checker.o add_to_stack.o operations.o push_swap_utils.o\
-	push_swap.o decibase.o normalizer.o
+OBJ = string_checker.o add_to_stack.o operations1.o operations2.o operations3.o\
+	push_swap_utils.o push_swap.o decibase.o normalizer.o
 
 # Targets & dependencies below:
 
