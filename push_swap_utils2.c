@@ -53,22 +53,16 @@ void	sort_3(t_linkedlist *a)
 		sa(a);
 	}
 	else if (current == largest && current->next == smallest)
-	{
 		ra(a);
-	}
 	else if (current == largest && current->next != smallest)
 	{
 		ra(a);
 		sa(a);
 	}
 	else if (current->next == largest)
-	{
 		rra(a);
-	}
 	else if (current->next == smallest)
-	{
 		sa(a);
-	}
 }
 
 void	sort_small_stack(t_linkedlist *a, t_linkedlist *b)

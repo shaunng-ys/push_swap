@@ -26,10 +26,6 @@ size_t	string_checker(char *s)
 	signal0 = 0;
 	counter = 0;
 	temp = 0;
-	/*
-	The immediate while loop below is to check for non-integer characters
-	& non-whitespace characters
-	*/
 	while (s[i] && signal0 == 0)
 	{
 		if ((s[i] >= '0' && s[i] <= '9') || (s[i] == '+' || s[i] == '-'))
@@ -38,23 +34,12 @@ size_t	string_checker(char *s)
 			signal0 = 0;
 		else
 			return (1);
-	   	i++;
+		i++;
 	}
-	/*
-	A double array is supposed to be created below, and is supposed to comprise
-	of strings of integer values
-	*/
 	d_array = ft_split(s, ' ');
 	i = 0;
-	/*
-	The immediate while loop below is supposed to check each string 
-	for non-integer values and also repeat integer values
-	*/
 	while (d_array[i] != NULL)
 	{
-		/*
-		The while loop below checks each string for multiple or misplaced '+' & '-'
-		*/
 		while (d_array[i][j])
 		{
 			if ((d_array[i][j] == '+' || d_array[i][j] == '-') && j != 0)
