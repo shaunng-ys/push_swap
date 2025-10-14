@@ -35,15 +35,19 @@ typedef struct s_linkedlist
 t_node			*createnode(int data);
 t_linkedlist	*createlinkedlist(void);
 void			append(t_linkedlist *list, int data);
+size_t			first_filter(char *s);
+size_t			second_filter(char **d_array, int i, size_t counter, long temp);
+size_t			string_comb(char **d_array);
 size_t			string_checker(char *s);
 //The display_last function is for personal testing purposes only.
-void			display_last(t_linkedlist *list);
+// void			display_last(t_linkedlist *list);
 //The display_list function is for personal testing purposes only.
 void			display_list(t_linkedlist *list);
 void			display_list_plus(t_linkedlist *list);
 int				num_order_check(t_linkedlist *list);
 t_node			*find_smallest(t_linkedlist *a);
 t_node			*find_largest(t_linkedlist *a);
+void			moveup_smallest(t_linkedlist *a, int counter);
 void			push_smallest(t_linkedlist *a, t_linkedlist *b);
 void			sort_3(t_linkedlist *a);
 void			sort_small_stack(t_linkedlist *a, t_linkedlist *b);

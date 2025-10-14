@@ -12,57 +12,170 @@
 
 #include "libft/libft.h"
 
-size_t	string_checker(char *s)
+size_t	first_filter(char *s)
 {
-	size_t	i;
-	size_t	j;
-	size_t	signal0;
-	size_t	counter;
-	char	**d_array;
-	long	temp;
+	int		i;
+	size_t	signal;
 
 	i = 0;
-	j = 0;
-	signal0 = 0;
-	counter = 0;
-	temp = 0;
-	while (s[i] && signal0 == 0)
+	signal = 0;
+	while (s[i] && signal == 0)
 	{
 		if ((s[i] >= '0' && s[i] <= '9') || (s[i] == '+' || s[i] == '-'))
-			signal0 = 0;
+			signal = 0;
 		else if (ft_isspace(s[i]) == 1)
-			signal0 = 0;
+			signal = 0;
 		else
 			return (1);
 		i++;
 	}
-	d_array = ft_split(s, ' ');
+	return (0);
+}
+
+size_t	second_filter(char **d_array, int i, size_t counter, long temp)
+{
+	int	j;
+
+	j = 0;
+	while (d_array[i][j])
+	{
+		if ((d_array[i][j] == '+' || d_array[i][j] == '-') && j != 0)
+			return (1);
+		j++;
+	}
+	j = 0;
+	temp = ft_atol(d_array[i]);
+	if (temp > 2147483647 || temp < -2147483648)
+		return (1);
+	while (d_array[j] != NULL && counter <= 1)
+	{
+		if (ft_atol(d_array[j++]) == temp)
+			counter++;
+	}
+	if (counter > 1)
+		return (1);
+	else if (counter == 1)
+		counter = 0;
+	return (0);
+}
+
+size_t	string_comb(char **d_array)
+{
+	int		i;
+	size_t	counter;
+	long	temp;
+
 	i = 0;
+	counter = 0;
+	temp = 0;
 	while (d_array[i] != NULL)
 	{
-		while (d_array[i][j])
-		{
-			if ((d_array[i][j] == '+' || d_array[i][j] == '-') && j != 0)
-				return (1);
-			j++;
-		}
-		j = 0;
-		temp = ft_atol(d_array[i]);
-		if (temp > 2147483647 || temp < -2147483648)
+		if (second_filter(d_array, i, counter, temp) == 1)
 			return (1);
-		while (d_array[j] != NULL && counter <= 1)
-		{
-			if (ft_atol(d_array[j++]) == temp)
-				counter++;
-		}
-		if (counter > 1)
-			return (1);
-		else if (counter == 1)
-			counter = 0;
-		j = 0;
 		free(d_array[i]);
 		i++;
 	}
+	return (0);
+}
+
+size_t	string_checker(char *s)
+{
+	size_t	j;
+	char	**d_array;
+
+	j = 0;
+	if (first_filter(s) == 1)
+		return (1);
+	d_array = ft_split(s, ' ');
+	if (string_comb(d_array) == 1)
+		return (1);
 	free(d_array);
 	return (0);
 }
+
+// size_t	string_comb(char **d_array, int i, int j, size_t check, long temp)
+// {
+// 	while (d_array[i] != NULL)
+// 	{
+// 		while (d_array[i][j])
+// 		{
+// 			if ((d_array[i][j] == '+' || d_array[i][j] == '-') && j != 0)
+// 				return (1);
+// 			j++;
+// 		}
+// 		j = 0;
+// 		temp = ft_atol(d_array[i]);
+// 		if (temp > 2147483647 || temp < -2147483648)
+// 			return (1);
+// 		while (d_array[j] != NULL && check <= 1)
+// 		{
+// 			if (ft_atol(d_array[j++]) == temp)
+// 				check++;
+// 		}
+// 		if (check > 1)
+// 			return (1);
+// 		else if (check == 1)
+// 			check = 0;
+// 		j = 0;
+// 		free(d_array[i]);
+// 		i++;
+// 	}
+// 	return (0);
+// }
+
+// size_t	string_checker(char *s)
+// {
+// 	size_t	i;
+// 	size_t	j;
+// 	size_t	check;
+// 	char	**d_array;
+// 	long	temp;
+
+// 	i = 0;
+// 	j = 0;
+// 	check = 0;
+// 	temp = 0;
+// 	if (first_filter(s, i) == 1)
+// 		return (1);
+// 	// while (s[i] && check == 0)
+// 	// {
+// 	// 	if ((s[i] >= '0' && s[i] <= '9') || (s[i] == '+' || s[i] == '-'))
+// 	// 		check = 0;
+// 	// 	else if (ft_isspace(s[i]) == 1)
+// 	// 		check = 0;
+// 	// 	else
+// 	// 		return (1);
+// 	// 	i++;
+// 	// }
+// 	d_array = ft_split(s, ' ');
+// 	i = 0;
+// 	if(string_comb(d_array, i, j, check, temp) == 1)
+// 		return (1);
+// 	// while (d_array[i] != NULL)
+// 	// {
+// 	// 	while (d_array[i][j])
+// 	// 	{
+// 	// 		if ((d_array[i][j] == '+' || d_array[i][j] == '-') && j != 0)
+// 	// 			return (1);
+// 	// 		j++;
+// 	// 	}
+// 	// 	j = 0;
+// 	// 	temp = ft_atol(d_array[i]);
+// 	// 	if (temp > 2147483647 || temp < -2147483648)
+// 	// 		return (1);
+// 	// 	while (d_array[j] != NULL && check <= 1)
+// 	// 	{
+// 	// 		if (ft_atol(d_array[j++]) == temp)
+// 	// 			check++;
+// 	// 	}
+// 	// 	if (check > 1)
+// 	// 		return (1);
+// 	// 	else if (check == 1)
+// 	// 		check = 0;
+// 	// 	j = 0;
+// 	// 	free(d_array[i]);
+// 	// 	i++;
+// 	// }
+// 	free(d_array);
+// 	return (0);
+// }

@@ -12,6 +12,30 @@
 
 #include "push_swap.h"
 
+t_node	*find_smallest(t_linkedlist *a)
+{
+	t_node	*current;
+	t_node	*smallest;
+	int		smallest_num;
+
+	current = a->head;
+	while (current->check == 1)
+		current = current->next;
+	smallest_num = current->data;
+	smallest = current;
+	while (current != NULL)
+	{
+		if ((smallest_num > current->data) && (current->check == 0))
+		{
+			smallest_num = current->data;
+			smallest = current;
+		}
+		current = current->next;
+	}
+	smallest->check = 1;
+	return (smallest);
+}
+
 t_node	*find_largest(t_linkedlist *a)
 {
 	t_node	*current;
@@ -109,34 +133,5 @@ void	radix(t_linkedlist *a, t_linkedlist *b, int index, int size)
 	{
 		pa(a, b);
 		current_b = b->head;
-	}
-}
-
-void	sort_big_stack(t_linkedlist *a, t_linkedlist *b)
-{
-	t_node	*current;
-	int		biggest;
-	int		max_length;
-	int		index;
-	char	*binstr;
-
-	ft_printf("This is the number of integers inputted: %d\n", a->size);
-	biggest = a->size;
-	max_length = 0;
-	while (biggest > 0)
-	{
-		biggest = biggest / 2;
-		max_length++;
-	}
-	biggest = a->size;
-	ft_printf("This is the max_length: %d\n", max_length);
-	simplifier(a, max_length);
-	index = max_length - 1;
-	display_list_plus(a);
-	while (index >= 0)
-	{
-		radix(a, b, index, biggest);
-		ft_printf("\nThis is index now: %d\n", index);
-		index--;
 	}
 }
