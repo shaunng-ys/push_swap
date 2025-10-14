@@ -55,7 +55,7 @@ static long	ft_divisor(int counter)
 
 static long	part2atol(const char *string, int index)
 {
-	int	counter;
+	int		counter;
 	long	multiplier;
 	long	tally;
 	long	nbr2add;
@@ -83,7 +83,7 @@ static long	part2atol(const char *string, int index)
 
 long	ft_atol(const char *nptr)
 {
-	int	i;
+	int		i;
 	long	sign_tracker;
 
 	i = 0;
