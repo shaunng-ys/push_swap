@@ -20,7 +20,6 @@ void	sort_big_stack(t_linkedlist *a, t_linkedlist *b)
 	int		index;
 	char	*binstr;
 
-	ft_printf("This is the number of integers inputted: %d\n", a->size);
 	biggest = a->size;
 	max_length = 0;
 	while (biggest > 0)
@@ -29,14 +28,11 @@ void	sort_big_stack(t_linkedlist *a, t_linkedlist *b)
 		max_length++;
 	}
 	biggest = a->size;
-	ft_printf("This is the max_length: %d\n", max_length);
 	simplifier(a, max_length);
 	index = max_length - 1;
-	display_list_plus(a);
 	while (index >= 0)
 	{
 		radix(a, b, index, biggest);
-		ft_printf("\nThis is index now: %d\n", index);
 		index--;
 	}
 }

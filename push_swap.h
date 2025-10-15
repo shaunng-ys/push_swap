@@ -41,7 +41,7 @@ size_t			string_comb(char **d_array);
 size_t			string_checker(char *s);
 //The display_last function is for personal testing purposes only.
 // void			display_last(t_linkedlist *list);
-//The display_list function is for personal testing purposes only.
+//The display_list functions are for personal testing purposes only.
 void			display_list(t_linkedlist *list);
 void			display_list_plus(t_linkedlist *list);
 int				num_order_check(t_linkedlist *list);
