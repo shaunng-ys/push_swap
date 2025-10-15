@@ -44,6 +44,9 @@ size_t	second_filter(char **d_array, int i, long temp)
 	{
 		if ((d_array[i][j] == '+' || d_array[i][j] == '-') && j != 0)
 			return (1);
+		else if (((d_array[i][j] == '+' || d_array[i][j] == '-') && j == 0))
+			if (d_array[i][j + 1] < '0' || d_array[i][j + 1] > '9')
+				return (1);
 		j++;
 	}
 	j = 0;
