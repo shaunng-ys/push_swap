@@ -72,24 +72,15 @@ int	main(int argc, char **argv)
 	if (argc == 1)
 		return (ft_putstr_fd("Error\n", 2), 1);
 	if (string_parser(argv, args, stack_a) == 1)
-	{
-		free_nodes(stack_a->head);
-		//might have to free_nodes, assuming, nodes have been created
-		return (free(stack_a), free(stack_b), 1);
-	}
+		return (free_nodes(stack_a->head), free(stack_a), free(stack_b), 1);
 	if (dupe_checker(stack_a) == 1)
 	{
-		free_nodes(stack_a->head);
 		free(stack_a);
 		free(stack_b);
-		return (ft_putstr_fd("Error\n", 2), 1);
+		return (free_nodes(stack_a->head), ft_putstr_fd("Error\n", 2), 1);
 	}
-	stack_sorter(stack_a, stack_b);
 	if (num_order_check(stack_a) == 1)
-		ft_printf("Hmm, it seems the stack has still not been sorted\n\n");
-	else
-		ft_printf("Stack has been sorted in %d operations, congrats!\n",
-			stack_a->num_operation);
+		stack_sorter(stack_a, stack_b);
 	free_nodes(stack_a->head);
 	free(stack_a);
 	free(stack_b);

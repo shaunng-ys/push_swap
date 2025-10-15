@@ -104,10 +104,7 @@ size_t	dupe_checker(t_linkedlist *a)
 		while (current2 != NULL)
 		{
 			if (current1->data == current2->data)
-			{
-				ft_printf("A dupe has been found!\n");
 				return (1);
-			}
 			current2 = current2->next;
 		}
 		current1 = current1->next;

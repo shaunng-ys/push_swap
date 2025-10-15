@@ -11,41 +11,6 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-/*
-struct	node
-{
-	int data;
-	struct node *previous;
-	struct node *next;
-};
-
-Node*	addNode (Node *current, int value)
-{
-	Node *newNode = (Node*)malloc(sizeof(Node));
-	if (newNode == NULL)
-		return (0);
-	newNode->data = value;
-	newNode->previous = current;
-	newNode->next = NULL;
-	return (newNode);
-}
-*/
-
-/*
-typedef struct	Node
-{
-	int	data;
-	size_t	original_pos;
-	size_t	simple;
-	struct Node	*next;
-} Node;
-
-typedef struct	LinkedList
-{
-	Node	*head;
-	int		size;
-} LinkedList;
-*/
 
 t_node	*createnode(int data)
 {
