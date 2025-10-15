@@ -82,7 +82,7 @@ int	main(int argc, char **argv)
 		free_nodes(stack_a->head);
 		free(stack_a);
 		free(stack_b);
-		return (1);
+		return (ft_putstr_fd("Error\n", 2), 1);
 	}
 	stack_sorter(stack_a, stack_b);
 	if (num_order_check(stack_a) == 1)

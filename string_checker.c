@@ -20,6 +20,8 @@ size_t	first_filter(char *s)
 
 	i = 0;
 	signal = 0;
+	if (s[0] == '\0')
+		return (1);
 	while (s[i] && signal == 0)
 	{
 		if ((s[i] >= '0' && s[i] <= '9') || (s[i] == '+' || s[i] == '-'))
