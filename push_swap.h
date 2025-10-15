@@ -36,9 +36,10 @@ t_node			*createnode(int data);
 t_linkedlist	*createlinkedlist(void);
 void			append(t_linkedlist *list, int data);
 size_t			first_filter(char *s);
-size_t			second_filter(char **d_array, int i, size_t counter, long temp);
+size_t			second_filter(char **d_array, int i, long temp);
 size_t			string_comb(char **d_array);
 size_t			string_checker(char *s);
+size_t			dupe_checker(t_linkedlist *a);
 //The display_last function is for personal testing purposes only.
 // void			display_last(t_linkedlist *list);
 //The display_list functions are for personal testing purposes only.

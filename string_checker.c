@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft/libft.h"
+#include "push_swap.h"
 
 size_t	first_filter(char *s)
 {
@@ -32,7 +33,7 @@ size_t	first_filter(char *s)
 	return (0);
 }
 
-size_t	second_filter(char **d_array, int i, size_t counter, long temp)
+size_t	second_filter(char **d_array, int i, long temp)
 {
 	int	j;
 
@@ -47,30 +48,19 @@ size_t	second_filter(char **d_array, int i, size_t counter, long temp)
 	temp = ft_atol(d_array[i]);
 	if (temp > 2147483647 || temp < -2147483648)
 		return (1);
-	while (d_array[j] != NULL && counter <= 1)
-	{
-		if (ft_atol(d_array[j++]) == temp)
-			counter++;
-	}
-	if (counter > 1)
-		return (1);
-	else if (counter == 1)
-		counter = 0;
 	return (0);
 }
 
 size_t	string_comb(char **d_array)
 {
 	int		i;
-	size_t	counter;
 	long	temp;
 
 	i = 0;
-	counter = 0;
 	temp = 0;
 	while (d_array[i] != NULL)
 	{
-		if (second_filter(d_array, i, counter, temp) == 1)
+		if (second_filter(d_array, i, temp) == 1)
 			return (1);
 		free(d_array[i]);
 		i++;
@@ -88,7 +78,34 @@ size_t	string_checker(char *s)
 		return (1);
 	d_array = ft_split(s, ' ');
 	if (string_comb(d_array) == 1)
+	{
+		free(d_array);
 		return (1);
+	}
 	free(d_array);
+	return (0);
+}
+
+size_t	dupe_checker(t_linkedlist *a)
+{
+	t_node	*current1;
+	t_node	*current2;
+
+	current1 = a->head;
+	current2 = current1->next;
+	while (current1->next != NULL)
+	{
+		current2 = current1->next;
+		while (current2 != NULL)
+		{
+			if (current1->data == current2->data)
+			{
+				ft_printf("A dupe has been found!\n");
+				return (1);
+			}
+			current2 = current2->next;
+		}
+		current1 = current1->next;
+	}
 	return (0);
 }

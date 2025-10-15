@@ -54,6 +54,8 @@ int	num_order_check(t_linkedlist *list)
 {
 	t_node	*current;
 
+	if (!list)
+		return (1);
 	current = list->head;
 	while (current->next != NULL)
 	{
